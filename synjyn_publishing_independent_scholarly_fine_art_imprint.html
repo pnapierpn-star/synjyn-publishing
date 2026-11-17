@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SYNJYN PUBLISHING — Independent Scholarly Monograph & Fine Art Imprint</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Times New Roman"', 'Times', 'Georgia', 'Baskerville', 'serif'],
+                        sans: ['"Times New Roman"', 'Georgia', 'serif']
+                    },
+                    colors: {
+                        parchment: '#FAF8F5',
+                        parchmentDark: '#F2EFE9',
+                        ink: '#1A1A1A',
+                        slateSepia: '#52504C',
+                        burgundy: '#6B2D2D',
+                        brass: '#7A6332',
+                        hairline: '#D8D3C8'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Classic Editorial & University Press Styling */
+        body {
+            background-color: #FAF8F5;
+            color: #1A1A1A;
+            font-family: "Times New Roman", Times, Georgia, serif;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        /* Subtle academic paper grain texture */
+        .paper-texture {
+            background-image: radial-gradient(rgba(26, 26, 26, 0.028) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+
+        /* Drop cap for scholarly manifesto */
+        .editorial-dropcap::first-letter {
+            float: left;
+            font-size: 4.1rem;
+            line-height: 0.82;
+            padding-top: 0.25rem;
+            padding-right: 0.75rem;
+            padding-bottom: 0.1rem;
+            color: #6B2D2D;
+            font-weight: normal;
+        }
+
+        /* Museum picture frame styling */
+        .gilt-frame {
+            border: 8px solid #2A2520;
+            box-shadow: 
+                inset 0 0 0 2px #7A6332,
+                inset 0 0 12px rgba(0,0,0,0.65),
+                0 10px 25px -5px rgba(26, 26, 26, 0.18);
+            background-color: #181614;
+        }
+
+        /* Custom subtle scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF8F5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D8D3C8;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7A6332;
+        }
+
+        /* Small caps utility */
+        .small-caps {
+            font-variant: small-caps;
+        }
+    </style>
+</head>
+<body class="paper-texture min-h-screen flex flex-col selection:bg-burgundy selection:text-parchment">
+
+    <!-- Top Archival Running Header -->
+    <div class="border-b border-hairline bg-parchmentDark/80 text-xs tracking-[0.18em] uppercase text-slateSepia py-2 px-4">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 text-center">
+            <span>paulnapierskie.com &bull; Official Archival Portal</span>
+            <span>Monographs &bull; Literary Critique &bull; Fine Art &bull; Spatial Blueprints</span>
+        </div>
+    </div>
+
+    <!-- Header & Masthead -->
+    <header class="border-b border-hairline bg-parchment pt-10 pb-6 px-4 sm:px-8">
+        <div class="max-w-6xl mx-auto flex flex-col items-center text-center">
+            
+            <!-- Custom SVG Seal Emblem (Open Book & Quill encircled by Circular Legend) -->
+            <div class="mb-5 group cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Synjyn Publishing Official Seal">
+                <svg class="w-28 h-28 sm:w-32 sm:h-32 text-ink transition-transform duration-500 group-hover:scale-[1.03]" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Synjyn Publishing Official Seal">
+                    <!-- Outer Double Concentric Rings -->
+                    <circle cx="100" cy="100" r="95" stroke="#1A1A1A" stroke-width="1.5"/>
+                    <circle cx="100" cy="100" r="90" stroke="#7A6332" stroke-width="0.9" stroke-dasharray="2 2"/>
+                    <circle cx="100" cy="100" r="64" stroke="#1A1A1A" stroke-width="1.2"/>
+                    <circle cx="100" cy="100" r="60" stroke="#6B2D2D" stroke-width="0.6"/>
+
+                    <!-- Circular Text Paths -->
+                    <defs>
+                        <path id="topArc" d="M 24,100 A 76,76 0 1,1 176,100" />
+                        <path id="bottomArc" d="M 178,104 A 78,78 0 0,1 22,104" />
+                    </defs>
+
+                    <text fill="#1A1A1A" font-family="'Times New Roman', serif" font-size="11.2" font-weight="bold" letter-spacing="3.1">
+                        <textPath href="#topArc" startOffset="50%" text-anchor="middle">
+                            SYNJYN PUBLISHING &bull; EST. MMXXVI
+                        </textPath>
+                    </text>
+
+                    <text fill="#52504C" font-family="'Times New Roman', serif" font-size="8.6" letter-spacing="2.1">
+                        <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">
+                            INDEPENDENT SCHOLARLY &amp; CREATIVE IMPRINT
+                        </textPath>
+                    </text>
+
+                    <!-- Decorative Cardinal Stars -->
+                    <polygon points="100,11 101.8,15.5 106.5,15.5 102.7,18.2 104.2,22.7 100,19.9 95.8,22.7 97.3,18.2 93.5,15.5 98.2,15.5" fill="#6B2D2D"/>
+
+                    <!-- Center Motif: Open Book -->
+                    <g transform="translate(0, 4)">
+                        <!-- Book Cover Base -->
+                        <path d="M56 116 C72 112, 88 115, 100 121 C112 115, 128 112, 144 116 L146 120 C130 116, 112 119, 100 125 C88 119, 70 116, 54 120 Z" fill="#1A1A1A"/>
+                        <!-- Left Page -->
+                        <path d="M59 86 C73 82, 88 85, 100 92 L100 119 C88 113, 73 110, 59 114 Z" fill="#FAF8F5" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round"/>
+                        <!-- Right Page -->
+                        <path d="M141 86 C127 82, 112 85, 100 92 L100 119 C112 113, 127 110, 141 114 Z" fill="#FAF8F5" stroke="#1A1A1A" stroke-width="1.4" stroke-linejoin="round"/>
+                        <!-- Page Text Lines (Left) -->
+                        <line x1="66" y1="93" x2="93" y2="97" stroke="#52504C" stroke-width="0.9"/>
+                        <line x1="66" y1="99" x2="93" y2="103" stroke="#52504C" stroke-width="0.9"/>
+                        <line x1="66" y1="105" x2="90" y2="108" stroke="#52504C" stroke-width="0.9"/>
+                        <!-- Page Text Lines (Right) -->
+                        <line x1="134" y1="93" x2="107" y2="97" stroke="#52504C" stroke-width="0.9"/>
+                        <line x1="134" y1="99" x2="107" y2="103" stroke="#52504C" stroke-width="0.9"/>
+                        <line x1="134" y1="105" x2="110" y2="108" stroke="#52504C" stroke-width="0.9"/>
+                    </g>
+
+                    <!-- Center Motif: Classical Feather Quill Rising Diagonally -->
+                    <g transform="translate(2, -2)">
+                        <!-- Quill Shaft -->
+                        <path d="M97 114 C104 94, 118 72, 136 53" stroke="#6B2D2D" stroke-width="1.8" stroke-linecap="round"/>
+                        <!-- Quill Nib -->
+                        <polygon points="97,114 93,121 100,117" fill="#1A1A1A"/>
+                        <!-- Quill Plume Vanes -->
+                        <path d="M136 53 C126 55, 114 64, 107 77 C112 77, 115 79, 113 82 C108 82, 104 86, 102 92 C110 92, 121 86, 128 75 C125 74, 124 72, 127 70 C132 66, 136 59, 136 53 Z" fill="#7A6332" fill-opacity="0.25" stroke="#1A1A1A" stroke-width="1.1" stroke-linejoin="round"/>
+                    </g>
+                </svg>
+            </div>
+
+            <!-- Masthead Title -->
+            <h1 class="text-3xl sm:text-5xl font-normal tracking-[0.22em] uppercase text-ink mb-2">
+                Synjyn Publishing
+            </h1>
+            <p class="text-sm sm:text-base italic text-slateSepia tracking-wide max-w-2xl mb-6">
+                Independent Scholarly Monograph &amp; Fine Art Imprint &bull; Founded by Paul Napierskie (SYNJYN)
+            </p>
+
+            <!-- Primary Editorial Navigation -->
+            <nav aria-label="Primary Navigation" class="w-full border-t border-b border-hairline py-3">
+                <ul class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs sm:text-sm uppercase tracking-[0.14em]">
+                    <li>
+                        <a href="#monographs" class="text-ink hover:text-burgundy transition-colors py-1">Monographs &amp; Research</a>
+                    </li>
+                    <li class="text-hairline hidden sm:inline">&bull;</li>
+                    <li>
+                        <a href="#vegetative-matrix" class="text-ink hover:text-burgundy transition-colors py-1">The Vegetative Matrix</a>
+                    </li>
+                    <li class="text-hairline hidden sm:inline">&bull;</li>
+                    <li>
+                        <a href="#fine-art" class="text-ink hover:text-burgundy transition-colors py-1">Fine Art Gallery (SYNJYN)</a>
+                    </li>
+                    <li class="text-hairline hidden sm:inline">&bull;</li>
+                    <li>
+                        <a href="#repositories" class="text-ink hover:text-burgundy transition-colors py-1">Digital Catalog &amp; Repositories</a>
+                    </li>
+                    <li class="text-hairline hidden sm:inline">&bull;</li>
+                    <li>
+                        <a href="#colophon" class="text-ink hover:text-burgundy transition-colors py-1">About &amp; Colophon</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+
+        <!-- Hero / Editorial Manifesto Section -->
+        <section class="max-w-5xl mx-auto px-4 sm:px-8 py-14 sm:py-20 border-b border-hairline">
+            <div class="text-center mb-8">
+                <span class="inline-block text-xs uppercase tracking-[0.2em] text-burgundy border border-burgundy/30 bg-burgundy/5 px-3.5 py-1 rounded-sm mb-4">
+                    Imprint Manifesto &amp; Archival Mission
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-normal leading-snug text-ink max-w-3xl mx-auto">
+                    Bridging Cultural Anthropology, Modernist Literary Critique, Western Esotericism, and Fine Oil Painting
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start mt-10">
+                <div class="md:col-span-8 text-base sm:text-lg leading-relaxed text-ink/90 space-y-5">
+                    <p class="editorial-dropcap">
+                        Synjyn Publishing operates as an independent scholarly press and atelier dedicated to long-form interdisciplinary inquiry and enduring visual craft. Established by researcher, author, and fine artist Paul Napierskie—working under the artistic moniker <strong>SYNJYN</strong>—the imprint investigates how symbolic systems migrate across historical epochs, sacred architectures, modernist literature, and ecological consciousness.
+                    </p>
+                    <p>
+                        Eschewing ephemeral digital trends in favor of archival permanence, the imprint curates a unified digital corpus spanning rigorous humanities monographs, structured research notebooks, and original oil paintings on canvas. Each publication and canvas plate is conceived as an artifact of contemplative study.
+                    </p>
+                </div>
+
+                <!-- Right Column: Quick Index & Imprint Credentials -->
+                <aside class="md:col-span-4 border border-hairline bg-parchmentDark/60 p-6 rounded-sm">
+                    <h3 class="text-xs uppercase tracking-[0.18em] text-brass font-bold border-b border-hairline pb-2.5 mb-4">
+                        Imprint Holdings &amp; Scope
+                    </h3>
+                    <dl class="space-y-3 text-sm">
+                        <div class="flex justify-between border-b border-hairline/60 pb-2">
+                            <dt class="text-slateSepia">Principal &amp; Artist</dt>
+                            <dd class="font-bold text-ink">Paul Napierskie (SYNJYN)</dd>
+                        </div>
+                        <div class="flex justify-between border-b border-hairline/60 pb-2">
+                            <dt class="text-slateSepia">Indexed Bibliography</dt>
+                            <dd class="font-bold text-ink">16 Archival Entries</dd>
+                        </div>
+                        <div class="flex justify-between border-b border-hairline/60 pb-2">
+                            <dt class="text-slateSepia">Primary Domains</dt>
+                            <dd class="text-right text-ink">Anthropology, Literature,<br>Esotericism, Oil Painting</dd>
+                        </div>
+                        <div class="flex justify-between">
+                            <dt class="text-slateSepia">Repositories</dt>
+                            <dd class="text-right text-ink">SSRN, ResearchGate, Academia</dd>
+                        </div>
+                    </dl>
+
+                    <div class="mt-6 pt-4 border-t border-hairline flex flex-col gap-2.5">
+                        <a href="#monographs" class="w-full text-center bg-ink text-parchment hover:bg-burgundy transition-colors py-2.5 px-4 text-xs uppercase tracking-[0.16em] rounded-sm">
+                            Explore Publications
+                        </a>
+                        <button type="button" data-action="download-bib" class="w-full text-center border border-ink text-ink hover:bg-ink hover:text-parchment transition-colors py-2.5 px-4 text-xs uppercase tracking-[0.16em] rounded-sm">
+                            Download Full .bib File
+                        </button>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- Featured Monographs & Scholarly Works (Interactive Filterable Catalog) -->
+        <section id="monographs" class="max-w-6xl mx-auto px-4 sm:px-8 py-16 border-b border-hairline">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.2em] text-brass mb-2">Section I &bull; Complete Bibliography (works.bib)</p>
+                    <h2 class="text-2xl sm:text-3xl font-normal text-ink">Scholarly Corpus &amp; Publications Catalog</h2>
+                    <p class="text-sm sm:text-base text-slateSepia italic mt-1">
+                        All sixteen indexed articles, conference papers, and monographs with verified DOIs, direct repository links, and multi-format citation export.
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto">
+                    <!-- Download Full .bib Button -->
+                    <button type="button" data-action="download-bib" class="px-4 py-2 bg-burgundy text-parchment hover:bg-ink transition-colors text-xs uppercase tracking-[0.14em] rounded-sm shrink-0">
+                        &darr; Download Full .bib File
+                    </button>
+                    <!-- Search Box -->
+                    <div class="w-full sm:w-64">
+                        <label for="catalog-search" class="sr-only">Search Publications</label>
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="catalog-search" 
+                                placeholder="Search title, DOI, or author..." 
+                                class="w-full bg-parchment border border-hairline focus:border-burgundy focus:outline-none px-3.5 py-2 text-sm text-ink placeholder:text-slateSepia/60 rounded-sm"
+                            >
+                            <span class="absolute right-3 top-2.5 text-xs text-slateSepia">&#9906;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex flex-wrap items-center gap-2 pb-6 mb-8 border-b border-hairline" role="tablist" aria-label="Filter publications by repository category">
+                <button data-filter="all" class="filter-btn active px-4 py-2 text-xs uppercase tracking-[0.14em] border border-ink bg-ink text-parchment rounded-sm transition-colors">
+                    All Works (16)
+                </button>
+                <button data-filter="SSRN / Elsevier Preprints" class="filter-btn px-4 py-2 text-xs uppercase tracking-[0.14em] border border-hairline bg-parchment text-ink hover:border-ink rounded-sm transition-colors">
+                    SSRN / Elsevier Preprints (6)
+                </button>
+                <button data-filter="ResearchGate Archive" class="filter-btn px-4 py-2 text-xs uppercase tracking-[0.14em] border border-hairline bg-parchment text-ink hover:border-ink rounded-sm transition-colors">
+                    ResearchGate Archive (6)
+                </button>
+                <button data-filter="Academia.edu & Conference Papers" class="filter-btn px-4 py-2 text-xs uppercase tracking-[0.14em] border border-hairline bg-parchment text-ink hover:border-ink rounded-sm transition-colors">
+                    Academia.edu &amp; Conference Papers (4)
+                </button>
+            </div>
+
+            <!-- Dynamic Catalog Grid -->
+            <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Populated by JavaScript -->
+            </div>
+
+            <!-- Empty Search State -->
+            <div id="catalog-empty" class="hidden text-center py-12 border border-hairline bg-parchmentDark/40 rounded-sm">
+                <p class="text-lg italic text-slateSepia">No publications match your current filter or search term.</p>
+                <button type="button" id="reset-filters-btn" class="mt-3 text-xs uppercase tracking-[0.15em] text-burgundy underline">
+                    Reset Catalog Filters
+                </button>
+            </div>
+        </section>
+
+        <!-- Dedicated Interactive Spotlight: The Vegetative Matrix -->
+        <section id="vegetative-matrix" class="max-w-6xl mx-auto px-4 sm:px-8 py-16 border-b border-hairline">
+            <div class="border border-hairline bg-parchmentDark/50 p-6 sm:p-10 rounded-sm">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7 space-y-4">
+                        <div class="flex items-center gap-3">
+                            <span class="text-xs uppercase tracking-[0.2em] text-burgundy font-bold">Section II &bull; Semiotic &amp; Anthropological Architecture</span>
+                            <span class="h-px flex-grow bg-hairline"></span>
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-normal text-ink">
+                            The Vegetative Matrix: The Rider-Waite-Smith Tarot, Anthropological Modernism, and Postmodern Semiotics
+                        </h2>
+                        <p class="text-base leading-relaxed text-ink/90">
+                            Published across SSRN (<span class="font-mono text-xs text-burgundy">DOI: 10.2139/ssrn.7578619</span>) and Academia.edu, <em>The Vegetative Matrix</em> examines the Rider-Waite-Smith Tarot as an organic semiotic system bridging Frazerian anthropological modernism, comparative ritual liminality, and postmodern sign theory.
+                        </p>
+
+                        <!-- Interactive Blueprint Strata Selector -->
+                        <div class="pt-2">
+                            <p class="text-xs uppercase tracking-[0.15em] text-slateSepia mb-3">Inspect Structural Strata:</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5" id="matrix-tabs-container">
+                                <button type="button" data-matrix-index="0" id="matrix-btn-0" class="matrix-tab text-left p-3 border border-burgundy bg-parchment rounded-sm transition-all">
+                                    <span class="block text-xs uppercase tracking-wider text-burgundy font-bold">I. Tarot Semiotics</span>
+                                    <span class="text-xs text-slateSepia">Rider-Waite-Smith Iconography</span>
+                                </button>
+                                <button type="button" data-matrix-index="1" id="matrix-btn-1" class="matrix-tab text-left p-3 border border-hairline bg-parchment/60 hover:border-ink rounded-sm transition-all">
+                                    <span class="block text-xs uppercase tracking-wider text-ink font-bold">II. Anthropological Modernism</span>
+                                    <span class="text-xs text-slateSepia">Frazer, Ritual &amp; Liminality</span>
+                                </button>
+                                <button type="button" data-matrix-index="2" id="matrix-btn-2" class="matrix-tab text-left p-3 border border-hairline bg-parchment/60 hover:border-ink rounded-sm transition-all">
+                                    <span class="block text-xs uppercase tracking-wider text-ink font-bold">III. Postmodern Semiotics</span>
+                                    <span class="text-xs text-slateSepia">Rhizomatic Sign Migration</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Active Strata Description Box -->
+                        <div id="matrix-detail-panel" class="p-4 border-l-2 border-burgundy bg-parchment text-sm leading-relaxed text-ink/90">
+                            <strong class="block text-ink mb-1">Stratum I — Rider-Waite-Smith Tarot Semiotics:</strong>
+                            Analyzes Pamela Colman Smith’s botanical landscapes, vegetative wands, and Major Arcana thresholds as a codified visual language encoding cyclical death, seasonal fertility, and initiatory transformation.
+                        </div>
+                    </div>
+
+                    <!-- Architectural SVG Schematic Diagram of The Vegetative Matrix -->
+                    <div class="lg:col-span-5 flex flex-col items-center">
+                        <div class="w-full border border-hairline bg-parchment p-4 rounded-sm shadow-sm">
+                            <svg viewBox="0 0 360 320" class="w-full h-auto" xmlns="http://www.w3.org/2000/svg" aria-label="The Vegetative Matrix Structural Diagram">
+                                <!-- Background Grid Lines -->
+                                <line x1="20" y1="80" x2="340" y2="80" stroke="#D8D3C8" stroke-dasharray="3 3"/>
+                                <line x1="20" y1="160" x2="340" y2="160" stroke="#D8D3C8" stroke-dasharray="3 3"/>
+                                <line x1="20" y1="240" x2="340" y2="240" stroke="#D8D3C8" stroke-dasharray="3 3"/>
+                                <line x1="180" y1="20" x2="180" y2="300" stroke="#D8D3C8" stroke-width="1"/>
+
+                                <!-- Concentric Sacred Geometry Rings -->
+                                <circle cx="180" cy="160" r="115" stroke="#1A1A1A" stroke-width="0.8" fill="none"/>
+                                <circle cx="180" cy="160" r="78" stroke="#7A6332" stroke-width="0.9" stroke-dasharray="4 2" fill="none"/>
+                                <circle cx="180" cy="160" r="40" stroke="#6B2D2D" stroke-width="1" fill="none"/>
+
+                                <!-- Branching Botanical / Architectural Vectors -->
+                                <path d="M180 275 L180 45" stroke="#1A1A1A" stroke-width="1.5"/>
+                                <path d="M180 215 C140 205, 110 185, 85 155" stroke="#1A1A1A" stroke-width="1.2" fill="none"/>
+                                <path d="M180 215 C220 205, 250 185, 275 155" stroke="#1A1A1A" stroke-width="1.2" fill="none"/>
+                                <path d="M180 145 C145 130, 120 105, 105 75" stroke="#6B2D2D" stroke-width="1.2" fill="none"/>
+                                <path d="M180 145 C215 130, 240 105, 255 75" stroke="#6B2D2D" stroke-width="1.2" fill="none"/>
+                                <!-- Root Network -->
+                                <path d="M180 240 C150 255, 125 270, 95 282" stroke="#7A6332" stroke-width="1.2" fill="none"/>
+                                <path d="M180 240 C210 255, 235 270, 265 282" stroke="#7A6332" stroke-width="1.2" fill="none"/>
+
+                                <!-- Interactive Highlight Nodes -->
+                                <circle id="svg-node-2" cx="180" cy="65" r="7" fill="#FAF8F5" stroke="#1A1A1A" stroke-width="1.5"/>
+                                <circle id="svg-node-1" cx="180" cy="160" r="9" fill="#FAF8F5" stroke="#1A1A1A" stroke-width="1.5"/>
+                                <circle id="svg-node-0" cx="180" cy="245" r="8" fill="#6B2D2D" stroke="#1A1A1A" stroke-width="1.5"/>
+
+                                <!-- Labels -->
+                                <text x="180" y="34" text-anchor="middle" font-family="Times New Roman" font-size="9.5" letter-spacing="1.5" fill="#1A1A1A">POSTMODERN SEMIOTICS</text>
+                                <text x="292" y="158" text-anchor="middle" font-family="Times New Roman" font-size="8.5" fill="#52504C">MODERNISM</text>
+                                <text x="68" y="158" text-anchor="middle" font-family="Times New Roman" font-size="8.5" fill="#52504C">LIMINALITY</text>
+                                <text x="180" y="305" text-anchor="middle" font-family="Times New Roman" font-size="9.5" letter-spacing="1.5" fill="#1A1A1A">RIDER-WAITE-SMITH TAROT</text>
+                            </svg>
+                            <p class="text-[11px] text-center italic text-slateSepia mt-2">
+                                Fig. 1 — Semiotic &amp; Anthropological Schema of The Vegetative Matrix (DOI: 10.2139/ssrn.7578619)
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fine Art Gallery — SYNJYN Oil Paintings -->
+        <section id="fine-art" class="max-w-6xl mx-auto px-4 sm:px-8 py-16 border-b border-hairline">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.2em] text-brass mb-2">Section III &bull; Atelier Exhibition</p>
+                    <h2 class="text-2xl sm:text-3xl font-normal text-ink">Fine Art Gallery — SYNJYN Oil Paintings</h2>
+                    <p class="text-sm sm:text-base text-slateSepia italic mt-1">
+                        Original oil-on-canvas works exploring chiaroscuro, architectural stillness, and esoteric landscape symbolism.
+                    </p>
+                </div>
+                <span class="text-xs uppercase tracking-[0.15em] text-slateSepia border border-hairline px-3 py-1.5 rounded-sm">
+                    Click any plate for curator inspection
+                </span>
+            </div>
+
+            <!-- Exhibition Plates Grid -->
+            <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Populated by JavaScript with custom high-craft procedural oil painting SVG/Canvas plates -->
+            </div>
+        </section>
+
+        <!-- External Academic Repositories & Unified Digital Catalog -->
+        <section id="repositories" class="max-w-6xl mx-auto px-4 sm:px-8 py-16 border-b border-hairline">
+            <div class="mb-10">
+                <p class="text-xs uppercase tracking-[0.2em] text-brass mb-2">Section IV &bull; Archival Distribution</p>
+                <h2 class="text-2xl sm:text-3xl font-normal text-ink">External Academic Repositories &amp; Unified Digital Catalog</h2>
+                <p class="text-sm sm:text-base text-slateSepia italic mt-1">
+                    Permanent scholarly indexing, DOI registration, and pre-print distribution across open academic networks.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- SSRN / Elsevier BV -->
+                <div class="border border-ink bg-parchmentDark/70 p-5 rounded-sm flex flex-col justify-between">
+                    <div>
+                        <span class="text-[11px] uppercase tracking-[0.16em] text-burgundy font-bold block mb-1">Elsevier BV &bull; 6 DOIs</span>
+                        <h3 class="text-lg font-bold text-ink mb-2">SSRN Repository</h3>
+                        <p class="text-xs leading-relaxed text-slateSepia mb-4">
+                            Houses primary 2026 preprints including <em>Betwixt and Between the Ruins</em>, <em>The Golden Bough and the Migration of the Sacred</em>, and <em>The Vegetative Matrix</em>.
+                        </p>
+                    </div>
+                    <a href="http://dx.doi.org/10.2139/ssrn.7578619" target="_blank" rel="noopener noreferrer" class="w-full text-left text-xs uppercase tracking-[0.14em] text-ink hover:text-burgundy border-t border-hairline pt-3 flex items-center justify-between">
+                        <span>Visit SSRN Record</span>
+                        <span>&#8599;</span>
+                    </a>
+                </div>
+
+                <!-- ResearchGate -->
+                <div class="border border-hairline bg-parchment p-5 rounded-sm flex flex-col justify-between hover:border-ink transition-colors">
+                    <div>
+                        <span class="text-[11px] uppercase tracking-[0.16em] text-brass block mb-1">DataCite DOIs &bull; 6 Works</span>
+                        <h3 class="text-lg font-bold text-ink mb-2">ResearchGate Archive</h3>
+                        <p class="text-xs leading-relaxed text-slateSepia mb-4">
+                            Permanent DOI records for <em>The Tin Snail</em>, <em>The Material Echo</em>, <em>Liminal Rhythms I-XI</em>, <em>Voyager and Liminality</em>, and <em>Symbolic Migration</em>.
+                        </p>
+                    </div>
+                    <a href="https://www.researchgate.net/doi/10.13140/RG.2.2.12304.37123" target="_blank" rel="noopener noreferrer" class="w-full text-left text-xs uppercase tracking-[0.14em] text-ink hover:text-burgundy border-t border-hairline pt-3 flex items-center justify-between">
+                        <span>Visit ResearchGate</span>
+                        <span>&#8599;</span>
+                    </a>
+                </div>
+
+                <!-- Academia.edu -->
+                <div class="border border-hairline bg-parchment p-5 rounded-sm flex flex-col justify-between hover:border-ink transition-colors">
+                    <div>
+                        <span class="text-[11px] uppercase tracking-[0.16em] text-brass block mb-1">Humanities Papers</span>
+                        <h3 class="text-lg font-bold text-ink mb-2">Academia.edu</h3>
+                        <p class="text-xs leading-relaxed text-slateSepia mb-4">
+                            Open-access humanities essays including <em>American Modernism: “The snows of Kilimanjaro”</em> and <em>The Vegetative Matrix</em>.
+                        </p>
+                    </div>
+                    <a href="https://independent.academia.edu" target="_blank" rel="noopener noreferrer" class="w-full text-left text-xs uppercase tracking-[0.14em] text-ink hover:text-burgundy border-t border-hairline pt-3 flex items-center justify-between">
+                        <span>Visit Academia.edu</span>
+                        <span>&#8599;</span>
+                    </a>
+                </div>
+
+                <!-- GitHub & BibTeX Export -->
+                <div class="border border-hairline bg-parchment p-5 rounded-sm flex flex-col justify-between hover:border-ink transition-colors">
+                    <div>
+                        <span class="text-[11px] uppercase tracking-[0.16em] text-brass block mb-1">Source Bibliography</span>
+                        <h3 class="text-lg font-bold text-ink mb-2">GitHub &amp; BibTeX Corpus</h3>
+                        <p class="text-xs leading-relaxed text-slateSepia mb-4">
+                            Machine-readable <code class="text-[11px]">works.bib</code> dataset containing all 16 verified entries, DOIs, and conference records.
+                        </p>
+                    </div>
+                    <button type="button" data-action="download-bib" class="w-full text-left text-xs uppercase tracking-[0.14em] text-ink hover:text-burgundy border-t border-hairline pt-3 flex items-center justify-between">
+                        <span>Export works.bib</span>
+                        <span>&darr;</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About the Imprint & Colophon -->
+        <section id="colophon" class="max-w-6xl mx-auto px-4 sm:px-8 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <!-- Left: Biographical & Editorial Statement -->
+                <div class="lg:col-span-7 space-y-4">
+                    <p class="text-xs uppercase tracking-[0.2em] text-brass">Section V &bull; Principal &amp; Editorial Note</p>
+                    <h2 class="text-2xl sm:text-3xl font-normal text-ink">About Paul Napierskie &amp; Synjyn Publishing</h2>
+                    <p class="text-base leading-relaxed text-ink/90">
+                        <strong>Paul Napierskie</strong> is an independent researcher, author, and fine artist whose work examines the structural continuity between symbolic ritual, literary modernism, and ecological consciousness. A member of <strong>Sigma Tau Delta</strong>, the International English Honor Society, his scholarly writing pairs close textual analysis with comparative cultural anthropology.
+                    </p>
+                    <p class="text-base leading-relaxed text-ink/90">
+                        Painting under the studio moniker <strong>SYNJYN</strong>, he extends these same philosophical preoccupations onto linen and canvas—employing classical oil glazing techniques to render architectural thresholds, nocturnal landscapes, and contemplative emblems. Synjyn Publishing unifies both vocations under a single independent press.
+                    </p>
+
+                    <div class="pt-4">
+                        <button type="button" data-action="open-inquiry" class="bg-burgundy text-parchment hover:bg-ink transition-colors px-6 py-3 text-xs uppercase tracking-[0.18em] rounded-sm">
+                            Academic Correspondence &amp; Monograph Requests
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right: Classic Bookmaker's Colophon -->
+                <div class="lg:col-span-5">
+                    <div class="border border-hairline bg-parchmentDark/60 p-6 sm:p-8 rounded-sm relative">
+                        <div class="text-center border-b border-hairline pb-4 mb-4">
+                            <span class="text-xs uppercase tracking-[0.25em] text-ink font-bold">Colophon</span>
+                        </div>
+                        <p class="text-sm leading-relaxed text-slateSepia italic text-justify">
+                            This digital edition of <strong>Synjyn Publishing</strong> (<em>paulnapierskie.com</em>) was composed in classic transitional and modern serif faces—principally <strong>Times New Roman</strong> and <strong>Georgia</strong>—in homage to university press monographs and nineteenth-century fine-art exhibition catalogs. Set upon a warm archival ivory ground (<span class="not-italic font-mono text-xs">#FAF8F5</span>) with deep charcoal ink (<span class="not-italic font-mono text-xs">#1A1A1A</span>) and antique burgundy rubrication (<span class="not-italic font-mono text-xs">#6B2D2D</span>), every plate, seal, and bibliographic record is engineered for clarity, permanence, and scholarly citation.
+                        </p>
+                        <div class="mt-5 pt-4 border-t border-hairline flex items-center justify-between text-xs text-slateSepia">
+                            <span>Imprint: Synjyn Publishing</span>
+                            <span>MMXXVI &bull; All Rights Reserved</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer with Seal Emblem -->
+    <footer class="border-t border-hairline bg-parchmentDark py-12 px-4 sm:px-8 text-center">
+        <div class="max-w-4xl mx-auto flex flex-col items-center">
+            <!-- Miniature Corporate/Academic Seal -->
+            <svg class="w-16 h-16 text-ink mb-4 opacity-90" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="100" cy="100" r="94" stroke="#1A1A1A" stroke-width="2"/>
+                <circle cx="100" cy="100" r="64" stroke="#1A1A1A" stroke-width="1.5"/>
+                <path d="M59 90 C73 86, 88 89, 100 96 L100 123 C88 117, 73 114, 59 118 Z" fill="#FAF8F5" stroke="#1A1A1A" stroke-width="2"/>
+                <path d="M141 90 C127 86, 112 89, 100 96 L100 123 C112 117, 127 114, 141 118 Z" fill="#FAF8F5" stroke="#1A1A1A" stroke-width="2"/>
+                <path d="M97 114 C104 94, 118 72, 136 53" stroke="#6B2D2D" stroke-width="3" stroke-linecap="round"/>
+            </svg>
+
+            <p class="text-sm uppercase tracking-[0.22em] text-ink font-bold mb-1">
+                Synjyn Publishing
+            </p>
+            <p class="text-xs italic text-slateSepia mb-4">
+                Paul Napierskie (SYNJYN) &bull; Independent Scholarly Monograph &amp; Fine Art Imprint
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 text-xs text-slateSepia">
+                <a href="#monographs" class="hover:text-burgundy">Monographs</a>
+                <span>&bull;</span>
+                <a href="#vegetative-matrix" class="hover:text-burgundy">The Vegetative Matrix</a>
+                <span>&bull;</span>
+                <a href="#fine-art" class="hover:text-burgundy">Fine Art Gallery</a>
+                <span>&bull;</span>
+                <button type="button" data-action="open-inquiry" class="hover:text-burgundy underline">Correspondence</button>
+            </div>
+            <p class="text-[11px] text-slateSepia/80 mt-6">
+                &copy; 2026 Synjyn Publishing &amp; Paul Napierskie. Archival Portal at paulnapierskie.com.
+            </p>
+        </div>
+    </footer>
+
+    <!-- MODAL 1: Publication Abstract, Structural Outline & Citation Generator -->
+    <div id="work-modal" class="fixed inset-0 z-50 hidden bg-ink/70 backdrop-blur-[1px] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="work-modal-title">
+        <div class="bg-parchment border border-ink max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8 rounded-sm shadow-2xl relative">
+            <button type="button" data-close-modal="work-modal" class="absolute top-4 right-4 text-slateSepia hover:text-ink text-xl px-2 py-1" aria-label="Close modal">&times;</button>
+            
+            <span id="work-modal-category" class="text-xs uppercase tracking-[0.18em] text-burgundy font-bold block mb-2">Category</span>
+            <h3 id="work-modal-title" class="text-xl sm:text-2xl font-normal text-ink leading-snug mb-2">Title</h3>
+            <p id="work-modal-meta" class="text-xs italic text-slateSepia border-b border-hairline pb-4 mb-5">Metadata</p>
+
+            <div class="space-y-4 text-sm sm:text-base leading-relaxed text-ink/90">
+                <div id="work-modal-doi-bar" class="hidden flex flex-wrap items-center justify-between gap-2 bg-parchmentDark border border-hairline px-3.5 py-2.5 rounded-sm text-xs">
+                    <div>
+                        <span class="uppercase tracking-wider text-slateSepia font-bold mr-1.5">DOI:</span>
+                        <span id="work-modal-doi" class="font-mono text-ink"></span>
+                    </div>
+                    <a id="work-modal-url" href="#" target="_blank" rel="noopener noreferrer" class="text-burgundy hover:underline font-bold uppercase tracking-wider">
+                        Access Primary Repository &#8599;
+                    </a>
+                </div>
+
+                <div>
+                    <h4 class="text-xs uppercase tracking-[0.15em] text-brass font-bold mb-1.5">Archival Abstract &amp; Scope</h4>
+                    <p id="work-modal-abstract"></p>
+                </div>
+
+                <div class="bg-parchmentDark/70 border border-hairline p-4 rounded-sm">
+                    <h4 class="text-xs uppercase tracking-[0.15em] text-ink font-bold mb-2">Key Theoretical Motifs</h4>
+                    <ul id="work-modal-themes" class="list-disc list-inside text-xs sm:text-sm text-slateSepia space-y-1"></ul>
+                </div>
+
+                <!-- Citation Generator -->
+                <div class="border-t border-hairline pt-4">
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+                        <h4 class="text-xs uppercase tracking-[0.15em] text-ink font-bold">Formatted Bibliographic Citation</h4>
+                        <div class="flex gap-1.5" id="citation-style-tabs">
+                            <button type="button" data-cite-style="Chicago" id="cite-btn-Chicago" class="cite-style-btn px-2.5 py-1 text-[11px] uppercase tracking-wider border border-ink bg-ink text-parchment rounded-sm">Chicago</button>
+                            <button type="button" data-cite-style="MLA" id="cite-btn-MLA" class="cite-style-btn px-2.5 py-1 text-[11px] uppercase tracking-wider border border-hairline bg-parchment text-ink rounded-sm">MLA</button>
+                            <button type="button" data-cite-style="APA" id="cite-btn-APA" class="cite-style-btn px-2.5 py-1 text-[11px] uppercase tracking-wider border border-hairline bg-parchment text-ink rounded-sm">APA</button>
+                            <button type="button" data-cite-style="BibTeX" id="cite-btn-BibTeX" class="cite-style-btn px-2.5 py-1 text-[11px] uppercase tracking-wider border border-hairline bg-parchment text-ink rounded-sm">BibTeX</button>
+                        </div>
+                    </div>
+                    <div id="citation-output" class="p-3 bg-parchmentDark border border-hairline text-xs text-ink font-serif leading-relaxed rounded-sm select-all"></div>
+                    <div class="mt-2.5 flex items-center justify-between">
+                        <span id="copy-feedback" class="text-xs italic text-burgundy opacity-0 transition-opacity">Citation copied to clipboard.</span>
+                        <button type="button" id="copy-citation-btn" class="px-4 py-1.5 bg-ink text-parchment hover:bg-burgundy text-xs uppercase tracking-[0.14em] rounded-sm transition-colors">
+                            Copy Citation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: Fine Art Lightbox Inspection -->
+    <div id="art-modal" class="fixed inset-0 z-50 hidden bg-ink/85 backdrop-blur-[1px] flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="art-modal-title">
+        <div class="bg-parchment border border-ink max-w-4xl w-full max-h-[92vh] overflow-y-auto p-6 sm:p-8 rounded-sm shadow-2xl relative">
+            <button type="button" data-close-modal="art-modal" class="absolute top-4 right-4 text-slateSepia hover:text-ink text-xl px-2 py-1" aria-label="Close lightbox">&times;</button>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+                <div class="md:col-span-7">
+                    <div id="art-modal-canvas-container" class="gilt-frame w-full aspect-[4/3] overflow-hidden">
+                        <!-- High-res SVG plate injected here -->
+                    </div>
+                </div>
+                <div class="md:col-span-5 space-y-3">
+                    <span class="text-xs uppercase tracking-[0.18em] text-burgundy font-bold block">SYNJYN Atelier Collection</span>
+                    <h3 id="art-modal-title" class="text-2xl font-normal text-ink">Artwork Title</h3>
+                    <p id="art-modal-specs" class="text-xs italic text-slateSepia border-b border-hairline pb-3">Oil on Canvas &bull; Dimensions</p>
+                    <p id="art-modal-notes" class="text-sm leading-relaxed text-ink/90 pt-1"></p>
+                    <div class="pt-4 border-t border-hairline">
+                        <button type="button" id="art-inquire-btn" class="w-full py-2.5 px-4 border border-ink text-ink hover:bg-ink hover:text-parchment text-xs uppercase tracking-[0.15em] rounded-sm transition-colors">
+                            Inquire Regarding Provenance / Print
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: Academic Correspondence & Monograph Request Form -->
+    <div id="inquiry-modal" class="fixed inset-0 z-50 hidden bg-ink/70 flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="inquiry-title">
+        <div class="bg-parchment border border-ink max-w-lg w-full p-6 sm:p-8 rounded-sm shadow-2xl relative">
+            <button type="button" data-close-modal="inquiry-modal" class="absolute top-4 right-4 text-slateSepia hover:text-ink text-xl px-2 py-1" aria-label="Close inquiry modal">&times;</button>
+            <span class="text-xs uppercase tracking-[0.18em] text-burgundy font-bold block mb-1">Editorial Desk</span>
+            <h3 id="inquiry-title" class="text-2xl font-normal text-ink mb-2">Academic Correspondence</h3>
+            <p class="text-xs italic text-slateSepia mb-5">
+                Direct inquiries to Paul Napierskie / Synjyn Publishing regarding monograph offprints, research collaboration, or SYNJYN fine art works.
+            </p>
+
+            <form id="inquiry-form" class="space-y-4">
+                <div>
+                    <label for="inq-name" class="block text-xs uppercase tracking-wider text-ink mb-1">Name &amp; Institutional Affiliation</label>
+                    <input type="text" id="inq-name" required placeholder="e.g., Dr. Eleanor Vance, Dept. of Comparative Literature" class="w-full bg-parchment border border-hairline focus:border-burgundy focus:outline-none px-3 py-2 text-sm rounded-sm">
+                </div>
+                <div>
+                    <label for="inq-email" class="block text-xs uppercase tracking-wider text-ink mb-1">Return Electronic Mail</label>
+                    <input type="email" id="inq-email" required placeholder="scholar@university.edu" class="w-full bg-parchment border border-hairline focus:border-burgundy focus:outline-none px-3 py-2 text-sm rounded-sm">
+                </div>
+                <div>
+                    <label for="inq-subject" class="block text-xs uppercase tracking-wider text-ink mb-1">Subject of Inquiry</label>
+                    <input type="text" id="inq-subject" required value="Monograph Offprint / Scholarly Correspondence" class="w-full bg-parchment border border-hairline focus:border-burgundy focus:outline-none px-3 py-2 text-sm rounded-sm">
+                </div>
+                <div>
+                    <label for="inq-message" class="block text-xs uppercase tracking-wider text-ink mb-1">Memorandum</label>
+                    <textarea id="inq-message" rows="4" required placeholder="Specify the monograph title, citation query, or artwork plate..." class="w-full bg-parchment border border-hairline focus:border-burgundy focus:outline-none px-3 py-2 text-sm rounded-sm"></textarea>
+                </div>
+                <div class="pt-2 flex items-center justify-end gap-3">
+                    <button type="button" data-close-modal="inquiry-modal" class="px-4 py-2 text-xs uppercase tracking-wider text-slateSepia hover:text-ink">Cancel</button>
+                    <button type="submit" class="px-6 py-2.5 bg-burgundy text-parchment hover:bg-ink text-xs uppercase tracking-[0.16em] rounded-sm transition-colors">
+                        Transmit Dispatch
+                    </button>
+                </div>
+            </form>
+
+            <div id="inquiry-success" class="hidden py-8 text-center space-y-3">
+                <p class="text-lg text-ink font-normal">Your dispatch has been logged for editorial review.</p>
+                <p class="text-xs italic text-slateSepia">Synjyn Publishing &bull; Paul Napierskie will respond via your provided return address.</p>
+                <button type="button" id="reset-inquiry-btn" class="mt-3 px-5 py-2 border border-ink text-xs uppercase tracking-wider rounded-sm">Return to Archive</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Exact Raw BibTeX Source from works (1).bib for Full .bib Export
+        const rawBibTeXFile = `@article{Napierskie_2026_Ruins, title={Betwixt and Between the Ruins}, url={http://dx.doi.org/10.2139/ssrn.7550662}, DOI={10.2139/ssrn.7550662}, publisher={Elsevier BV}, author={Napierskie, Paul}, year={2026} }
+,
+@article{Napierskie_2026_Labyrinth, title={Symbolic Migration and the Labyrinth: Ritual, Liminality, and the Missing Exit in Modern Literature, Film, and Digital Culture}, url={http://dx.doi.org/10.2139/ssrn.7591019}, DOI={10.2139/ssrn.7591019}, publisher={Elsevier BV}, author={Napierskie, Paul}, year={2026} }
+,
+@article{Napierskie_2026_GoldenBough, title={The Golden Bough and the Migration of the Sacred}, url={http://dx.doi.org/10.2139/ssrn.7548941}, DOI={10.2139/ssrn.7548941}, publisher={Elsevier BV}, author={Napierskie, Paul}, year={2026} }
+,
+@article{Napierskie_2026_TheThing, title={The Thing: Identity, Consciousness, and Twisted Panspermia: A Three-part Scholarly Inquiry Into John Carpenter’s 1982 Film}, url={http://dx.doi.org/10.2139/ssrn.7661878}, DOI={10.2139/ssrn.7661878}, publisher={Elsevier BV}, author={Napierskie, Paul}, year={2026} }
+,
+@article{Napierskie_2026_VegetativeMatrix, title={The Vegetative Matrix: The Rider-Waite-Smith Tarot, Anthropological Modernism, and Postmodern Semiotics:}, url={http://dx.doi.org/10.2139/ssrn.7578619}, DOI={10.2139/ssrn.7578619}, publisher={Elsevier BV}, author={Napierskie, Paul}, year={2026} }
+,
+@article{Napierskie_2026_SilenceSSRN, title={What the Silence Is Shaped Like Music, Memory, and the Spaces Between}, url={http://dx.doi.org/10.2139/ssrn.7613679}, DOI={10.2139/ssrn.7613679}, publisher={Elsevier BV}, author={Napierskie, Paul}, year={2026} }
+,
+@article{https://doi.org/10.13140/rg.2.2.23567.55201, doi = {10.13140/RG.2.2.23567.55201}, url = {https://www.researchgate.net/doi/10.13140/RG.2.2.23567.55201}, author = {{Paul Napierskie}}, language = {en}, title = {The Tin Snail: Liminality, Material Identity, and the In-Between Self in Baum and Woolf}, publisher = {Unpublished}, year = {2026}},
+@article{https://doi.org/10.13140/rg.2.2.20678.23369, doi = {10.13140/RG.2.2.20678.23369}, url = {https://www.researchgate.net/doi/10.13140/RG.2.2.20678.23369}, author = {{Paul Napierskie}}, language = {en}, title = {What the Silence Is Shaped Like Music, Memory, and the Spaces Between}, publisher = {Unpublished}, year = {2026}},
+@article{https://doi.org/10.13140/rg.2.2.36605.52964, doi = {10.13140/RG.2.2.36605.52964}, url = {https://www.researchgate.net/doi/10.13140/RG.2.2.36605.52964}, author = {{Paul Napierskie}}, language = {en}, title = {The Material Echo: Architecture as a Distributed Memory System Sound, Materiality, Liminality, and the Anthropology of Human Presence}, publisher = {Unpublished}, year = {2026}},
+@misc{Paul_Napier_225729910,
+title={The Vegetative Matrix},
+journal={Academia .edu},
+author={Paul Napier},
+year={2026}
+},
+@misc{Paul_Napier_225729520,
+title={Voyager and Liminality},
+journal={research gate},
+author={Paul Napier},
+year={2026}
+},
+@conference{Paul_Napier_230975107,
+title={THE THING: IDENTITY, CONSCIOUSNESS, SIMULATION, AND TWISTED PANSPERMIA},
+journal={KANSAS city Conference 2026},
+author={Paul Napier and paul napierskie},
+year={2026}
+},
+@article{https://doi.org/10.13140/rg.2.2.30504.12803, doi = {10.13140/RG.2.2.30504.12803}, url = {https://www.researchgate.net/doi/10.13140/RG.2.2.30504.12803}, author = {{Paul Napierskie}}, title = {Liminal Rhythms I-XI}, publisher = {Unpublished}, year = {2026}},
+@article{Paul_Napier_231832783,
+title={The Tin Snail Liminality, Material Identity, and the In-Between Self in Baum, Woolf, and Napierskie},
+journal={Interdisciplinary Thesis in Anthropology and English Literature},
+author={Paul Napier},
+year={2026}
+},
+@article{https://doi.org/10.13140/rg.2.2.12304.37123, doi = {10.13140/RG.2.2.12304.37123}, url = {https://www.researchgate.net/doi/10.13140/RG.2.2.12304.37123}, author = {{Paul Napierskie} and {B A Anthropology Napierskie}}, language = {en}, title = {SYMBOLIC MIGRATION Ritual, Philosophy, Literature, and Ecological Consciousness in Western Esotericism}, publisher = {Unpublished}, year = {2026}},
+@misc{Paul_Napier_225730008,
+title={American Modernism: “The snows of Kilimanjaro”},
+journal={Academia.edu},
+author={Paul Napier}
+}`;
+
+        // All 16 Bibliography Entries Populated Strictly from works (1).bib
+        const publications = [
+            {
+                id: 1,
+                featured: true,
+                title: "Betwixt and Between the Ruins",
+                author: "Paul Napierskie",
+                category: "SSRN / Elsevier Preprints",
+                venue: "SSRN / Elsevier BV",
+                year: "2026",
+                doi: "10.2139/ssrn.7550662",
+                url: "http://dx.doi.org/10.2139/ssrn.7550662",
+                bibtex: `@article{Napierskie_2026, title={Betwixt and Between the Ruins}, url={http://dx.doi.org/10.2139/ssrn.7550662}, DOI={10.2139/ssrn.7550662}, publisher={Elsevier BV}, author={Napierskie, Paul}, year={2026} }`,
+                abstract: "An anthropological and literary inquiry into architectural ruin, post-industrial landscape, and Victor Turner’s concept of liminality—examining how cultural memory persists within fragmented and transitional spaces.",
+                themes: [
+                    "Turnerian Liminality and Threshold Spaces",
+                    "Archaeology of Modern Ruins and Cultural Residue",
+                    "Continuity of Ritual Memory Across Ruptured Landscapes"
+                ]
+            },
+            {
+                id: 2,
+                featured: true,
+                title: "Symbolic Migration and the Labyrinth: Ritual, Liminality, and the Missing Exit in Modern Literature, Film, and Digital Culture",
+                author: "Paul Napierskie",
+                category: "SSRN / Elsevier Preprints",
+                venue: "SSRN / Elsevier BV",
+                year: "2026",
+                doi: "10.2139/ssrn.7591019",
+                url: "http://dx.doi.org/10.2139/ssrn.7591019",
+                bibtex: `@article{Napierskie_2026, title={Symbolic Migration and the Labyrinth: Ritual, Liminality, and the Missing Exit in Modern Literature, Film, and Digital Culture}, url={http://dx.doi.org/10.2139/ssrn.7591019}, DOI={10.2139/ssrn.7591019}, publisher={Elsevier BV}, author={Napierskie, Paul}, year={2026} }`,
+                abstract: "Traces the migration of the classical labyrinth archetype from ancient initiatory ritual into modernist literature, cinema, and recursive digital networks, focusing on the structural suspension of the 'missing exit.'",
+                themes: [
+                    "Classical Initiatory Labyrinths vs. Recursive Digital Networks",
+                    "Suspended Liminality and the Missing Exit Motif",
+                    "Cross-Media Symbolic Migration in Film and Literature"
+                ]
+            },
+            {
+                id: 3,
+                featured: true,
+                title: "The Golden Bough and the Migration of the Sacred",
+                author: "Paul Napierskie",
+                category: "SSRN / Elsevier Preprints",
+                venue: "SSRN / Elsevier BV",
+                year: "2026",
+                doi: "10.2139/ssrn.7548941",
+                url: "http://dx.doi.org/10.2139/ssrn.7548941",
+                bibtex: `@article{Napierskie_2026, title={The Golden Bough and the Migration of the Sacred}, url={http://dx.doi.org/10.2139/ssrn.7548941}, DOI={10.2139/ssrn.7548941}, publisher={Elsevier BV}, author={Napierskie, Paul}, year={2026} }`,
+                abstract: "Re-examines Sir James George Frazer’s 'The Golden Bough' as a foundational text of comparative mythopoesis, tracing how sacralized botanical and sacrificial motifs migrate into twentieth-century modernist aesthetics.",
+                themes: [
+                    "Frazerian Comparative Anthropology and Sacred Kingship",
+                    "Botanical Symbolism and the Grove of Nemi",
+                    "Transmutation of Ritual Myth into Modernist Poetics"
+                ]
+            },
+            {
+                id: 4,
+                featured: false,
+                title: "The Thing: Identity, Consciousness, and Twisted Panspermia: A Three-part Scholarly Inquiry Into John Carpenter’s 1982 Film",
+                author: "Paul Napierskie",
+                category: "SSRN / Elsevier Preprints",
+                venue: "SSRN / Elsevier BV",
+                year: "2026",
+                doi: "10.2139/ssrn.7661878",
+                url: "http://dx.doi.org/10.2139/ssrn.7661878",
+                bibtex: `@article{Napierskie_2026, title={The Thing: Identity, Consciousness, and Twisted Panspermia: A Three-part Scholarly Inquiry Into John Carpenter’s 1982 Film}, url={http://dx.doi.org/10.2139/ssrn.7661878}, DOI={10.2139/ssrn.7661878}, publisher={Elsevier BV}, author={Napierskie, Paul}, year={2026} }`,
+                abstract: "A three-part philosophical and anthropological examination of John Carpenter’s 1982 masterpiece 'The Thing', interrogating cellular assimilation, epistemological paranoia, consciousness, and cosmic panspermia.",
+                themes: [
+                    "Cellular Mimicry and the Dissolution of Individual Identity",
+                    "Epistemological Paranoia and Cold War Isolation",
+                    "Twisted Panspermia and Non-Human Evolutionary Agency"
+                ]
+            },
+            {
+                id: 5,
+                featured: true,
+                title: "The Vegetative Matrix: The Rider-Waite-Smith Tarot, Anthropological Modernism, and Postmodern Semiotics",
+                author: "Paul Napierskie",
+                category: "SSRN / Elsevier Preprints",
+                venue: "SSRN / Elsevier BV",
+                year: "2026",
+                doi: "10.2139/ssrn.7578619",
+                url: "http://dx.doi.org/10.2139/ssrn.7578619",
+                bibtex: `@article{Napierskie_2026, title={The Vegetative Matrix: The Rider-Waite-Smith Tarot, Anthropological Modernism, and Postmodern Semiotics:}, url={http://dx.doi.org/10.2139/ssrn.7578619}, DOI={10.2139/ssrn.7578619}, publisher={Elsevier BV}, author={Napierskie, Paul}, year={2026} }`,
+                abstract: "Investigates the Rider-Waite-Smith Tarot deck at the crossroads of early twentieth-century anthropological modernism and postmodern semiotics, reading its botanical iconography as a generative matrix of cultural signifiers.",
+                themes: [
+                    "Pamela Colman Smith’s Botanical & Landscape Iconography",
+                    "Anthropological Modernism and Esoteric Revivalism",
+                    "Postmodern Semiotics and Polyvalent Divinatory Textuality"
+                ]
+            },
+            {
+                id: 6,
+                featured: false,
+                title: "What the Silence Is Shaped Like Music, Memory, and the Spaces Between",
+                author: "Paul Napierskie",
+                category: "SSRN / Elsevier Preprints",
+                venue: "SSRN / Elsevier BV",
+                year: "2026",
+                doi: "10.2139/ssrn.7613679",
+                url: "http://dx.doi.org/10.2139/ssrn.7613679",
+                bibtex: `@article{Napierskie_2026, title={What the Silence Is Shaped Like Music, Memory, and the Spaces Between}, url={http://dx.doi.org/10.2139/ssrn.7613679}, DOI={10.2139/ssrn.7613679}, publisher={Elsevier BV}, author={Napierskie, Paul}, year={2026} }`,
+                abstract: "Examines acoustic intervals, musical rests, and negative space as active carriers of human memory and temporal consciousness across musicology, literature, and phenomenology.",
+                themes: [
+                    "Phenomenology of the Musical Rest and Acoustic Interval",
+                    "Mnemonic Resonance in Negative Space",
+                    "Silence as Structural Architecture in Modernist Prose"
+                ]
+            },
+            {
+                id: 7,
+                featured: false,
+                title: "The Tin Snail: Liminality, Material Identity, and the In-Between Self in Baum and Woolf",
+                author: "Paul Napierskie",
+                category: "ResearchGate Archive",
+                venue: "ResearchGate",
+                year: "2026",
+                doi: "10.13140/RG.2.2.23567.55201",
+                url: "https://www.researchgate.net/doi/10.13140/RG.2.2.23567.55201",
+                bibtex: `@article{https://doi.org/10.13140/rg.2.2.23567.55201, doi = {10.13140/RG.2.2.23567.55201}, url = {https://www.researchgate.net/doi/10.13140/RG.2.2.23567.55201}, author = {{Paul Napierskie}}, language = {en}, title = {The Tin Snail: Liminality, Material Identity, and the In-Between Self in Baum and Woolf}, publisher = {Unpublished}, year = {2026}}`,
+                abstract: "A comparative inquiry juxtaposing L. Frank Baum’s Tin Woodman with Virginia Woolf’s material poetics to explore bodily prosthesis, composite identity, and the threshold between organic and artificial selfhood.",
+                themes: [
+                    "Prosthetic Materiality and the Tin Woodman",
+                    "Object-Oriented Interiority in Virginia Woolf",
+                    "Liminal Selfhood Between Flesh and Artifact"
+                ]
+            },
+            {
+                id: 8,
+                featured: false,
+                title: "What the Silence Is Shaped Like Music, Memory, and the Spaces Between",
+                author: "Paul Napierskie",
+                category: "ResearchGate Archive",
+                venue: "ResearchGate",
+                year: "2026",
+                doi: "10.13140/RG.2.2.20678.23369",
+                url: "https://www.researchgate.net/doi/10.13140/RG.2.2.20678.23369",
+                bibtex: `@article{https://doi.org/10.13140/rg.2.2.20678.23369, doi = {10.13140/RG.2.2.20678.23369}, url = {https://www.researchgate.net/doi/10.13140/RG.2.2.20678.23369}, author = {{Paul Napierskie}}, language = {en}, title = {What the Silence Is Shaped Like Music, Memory, and the Spaces Between}, publisher = {Unpublished}, year = {2026}}`,
+                abstract: "ResearchGate archival deposit of the interdisciplinary study exploring the morphology of silence, auditory memory, and liminal intervals between sound and remembrance.",
+                themes: [
+                    "Acoustic Memory and Temporal Intervals",
+                    "Comparative Aesthetics of Silence",
+                    "ResearchGate DataCite Archival Edition"
+                ]
+            },
+            {
+                id: 9,
+                featured: false,
+                title: "The Material Echo: Architecture as a Distributed Memory System Sound, Materiality, Liminality, and the Anthropology of Human Presence",
+                author: "Paul Napierskie",
+                category: "ResearchGate Archive",
+                venue: "ResearchGate",
+                year: "2026",
+                doi: "10.13140/RG.2.2.36605.52964",
+                url: "https://www.researchgate.net/doi/10.13140/RG.2.2.36605.52964",
+                bibtex: `@article{https://doi.org/10.13140/rg.2.2.36605.52964, doi = {10.13140/RG.2.2.36605.52964}, url = {https://www.researchgate.net/doi/10.13140/RG.2.2.36605.52964}, author = {{Paul Napierskie}}, language = {en}, title = {The Material Echo: Architecture as a Distributed Memory System Sound, Materiality, Liminality, and the Anthropology of Human Presence}, publisher = {Unpublished}, year = {2026}}`,
+                abstract: "Conceptualizes built architecture as a distributed mnemonic and acoustic apparatus, analyzing how stone, timber, and enclosed thresholds retain and reverberate human presence across generations.",
+                themes: [
+                    "Architectural Acoustics and Spatial Reverberation",
+                    "Built Environments as Distributed Memory Systems",
+                    "Anthropology of Material Trace and Human Presence"
+                ]
+            },
+            {
+                id: 10,
+                featured: false,
+                title: "The Vegetative Matrix",
+                author: "Paul Napier",
+                category: "Academia.edu & Conference Papers",
+                venue: "Academia.edu",
+                year: "2026",
+                doi: null,
+                url: "https://independent.academia.edu",
+                bibtex: `@misc{Paul_Napier_225729910,\ntitle={The Vegetative Matrix},\njournal={Academia .edu},\nauthor={Paul Napier},\nyear={2026}\n}`,
+                abstract: "Academia.edu humanities deposit of 'The Vegetative Matrix', outlining the core botanical-semiotic taxonomy linking esoteric iconography, ritual ecology, and modernist literary structure.",
+                themes: [
+                    "Botanical Taxonomies in Symbolic Systems",
+                    "Foundational Research Matrix Deposit",
+                    "Cross-Disciplinary Humanities Synthesis"
+                ]
+            },
+            {
+                id: 11,
+                featured: false,
+                title: "Voyager and Liminality",
+                author: "Paul Napier",
+                category: "ResearchGate Archive",
+                venue: "ResearchGate",
+                year: "2026",
+                doi: null,
+                url: "https://www.researchgate.net",
+                bibtex: `@misc{Paul_Napier_225729520,\ntitle={Voyager and Liminality},\njournal={research gate},\nauthor={Paul Napier},\nyear={2026}\n}`,
+                abstract: "Examines interstellar exploration and the Voyager Golden Record through the anthropological lens of the cosmic threshold—where human cultural artifacts enter permanent extra-solar liminality.",
+                themes: [
+                    "The Heliopause as Cosmic Threshold",
+                    "The Voyager Golden Record as Anthropological Time Capsule",
+                    "Symbolic Migration Beyond Terrestrial Boundaries"
+                ]
+            },
+            {
+                id: 12,
+                featured: false,
+                title: "THE THING: IDENTITY, CONSCIOUSNESS, SIMULATION, AND TWISTED PANSPERMIA",
+                author: "Paul Napier and Paul Napierskie",
+                category: "Academia.edu & Conference Papers",
+                venue: "Kansas City Conference 2026",
+                year: "2026",
+                doi: null,
+                url: "https://paulnapierskie.com/#monographs",
+                bibtex: `@conference{Paul_Napier_230975107,\ntitle={THE THING: IDENTITY, CONSCIOUSNESS, SIMULATION, AND TWISTED PANSPERMIA},\njournal={KANSAS city Conference 2026},\nauthor={Paul Napier and paul napierskie},\nyear={2026}\n}`,
+                abstract: "Conference paper delivered at the Kansas City Conference 2026 expanding the inquiry into John Carpenter’s 'The Thing' to encompass Baudrillardian simulation, biological mimicry, and cosmic panspermia.",
+                themes: [
+                    "Simulation and Biological Simulacra",
+                    "Consciousness Under Threat of Assimilation",
+                    "Kansas City Conference 2026 Proceedings"
+                ]
+            },
+            {
+                id: 13,
+                featured: false,
+                title: "Liminal Rhythms I-XI",
+                author: "Paul Napierskie",
+                category: "ResearchGate Archive",
+                venue: "ResearchGate",
+                year: "2026",
+                doi: "10.13140/RG.2.2.30504.12803",
+                url: "https://www.researchgate.net/doi/10.13140/RG.2.2.30504.12803",
+                bibtex: `@article{https://doi.org/10.13140/rg.2.2.30504.12803, doi = {10.13140/RG.2.2.30504.12803}, url = {https://www.researchgate.net/doi/10.13140/RG.2.2.30504.12803}, author = {{Paul Napierskie}}, title = {Liminal Rhythms I-XI}, publisher = {Unpublished}, year = {2026}}`,
+                abstract: "An eleven-part cycle of poetic and theoretical meditations exploring cadence, threshold states, nocturnal stillness, and the rhythmic recurrence of memory across visual and literary form.",
+                themes: [
+                    "Eleven-Part Structural Cycle (I–XI)",
+                    "Cadence, Prosody, and Liminal Temporalities",
+                    "Intersection of Poetic Form and Visual Contemplation"
+                ]
+            },
+            {
+                id: 14,
+                featured: false,
+                title: "The Tin Snail Liminality, Material Identity, and the In-Between Self in Baum, Woolf, and Napierskie",
+                author: "Paul Napier",
+                category: "Academia.edu & Conference Papers",
+                venue: "Interdisciplinary Thesis in Anthropology and English Literature",
+                year: "2026",
+                doi: null,
+                url: "https://paulnapierskie.com/#monographs",
+                bibtex: `@article{Paul_Napier_231832783,\ntitle={The Tin Snail Liminality, Material Identity, and the In-Between Self in Baum, Woolf, and Napierskie},\njournal={Interdisciplinary Thesis in Anthropology and English Literature},\nauthor={Paul Napier},\nyear={2026}\n}`,
+                abstract: "Full interdisciplinary thesis in Anthropology and English Literature synthesizing literary modernism, material culture theory, and auto-ethnographic reflection on the 'in-between self.'",
+                themes: [
+                    "Interdisciplinary Methodology: Anthropology & English Literature",
+                    "Material Identity in L. Frank Baum and Virginia Woolf",
+                    "Auto-Ethnographic Synthesis and Liminal Subjectivity"
+                ]
+            },
+            {
+                id: 15,
+                featured: true,
+                title: "SYMBOLIC MIGRATION Ritual, Philosophy, Literature, and Ecological Consciousness in Western Esotericism",
+                author: "Paul Napierskie, B.A. Anthropology",
+                category: "ResearchGate Archive",
+                venue: "ResearchGate",
+                year: "2026",
+                doi: "10.13140/RG.2.2.12304.37123",
+                url: "https://www.researchgate.net/doi/10.13140/RG.2.2.12304.37123",
+                bibtex: `@article{https://doi.org/10.13140/rg.2.2.12304.37123, doi = {10.13140/RG.2.2.12304.37123}, url = {https://www.researchgate.net/doi/10.13140/RG.2.2.12304.37123}, author = {{Paul Napierskie} and {B A Anthropology Napierskie}}, language = {en}, title = {SYMBOLIC MIGRATION Ritual, Philosophy, Literature, and Ecological Consciousness in Western Esotericism}, publisher = {Unpublished}, year = {2026}}`,
+                abstract: "Flagship anthropological and esoteric monograph tracing how ritual symbols, philosophical correspondences, and ecological consciousness migrate across Western esoteric traditions and modern literature.",
+                themes: [
+                    "Morphology of Symbolic Migration Across Historical Epochs",
+                    "Western Esoteric Philosophy and Sacred Ecology",
+                    "Anthropological Synthesis of Ritual and Literature"
+                ]
+            },
+            {
+                id: 16,
+                featured: false,
+                title: "American Modernism: “The snows of Kilimanjaro”",
+                author: "Paul Napier",
+                category: "Academia.edu & Conference Papers",
+                venue: "Academia.edu",
+                year: "n.d.",
+                doi: null,
+                url: "https://independent.academia.edu",
+                bibtex: `@misc{Paul_Napier_225730008,\ntitle={American Modernism: “The snows of Kilimanjaro”},\njournal={Academia.edu},\nauthor={Paul Napier}\n}`,
+                abstract: "A close critical analysis of Ernest Hemingway’s 'The Snows of Kilimanjaro', examining mortality, artistic regret, symbolic elevation, and the stylistic austerity of American literary modernism.",
+                themes: [
+                    "Mortality and Retrospection in Ernest Hemingway",
+                    "Symbolic Topography: The Plain vs. The Summit",
+                    "Austerity and Iceberg Poetics in American Modernism"
+                ]
+            }
+        ];
+
+        // Fine Art Oil Paintings Data (SYNJYN) with bespoke procedural SVG museum plates
+        const artworks = [
+            {
+                id: "plate-1",
+                title: "Nocturne at the Stone Threshold",
+                year: "2025",
+                medium: "Oil on Belgian Linen",
+                dimensions: "36 × 48 in. (91.4 × 121.9 cm)",
+                notes: "Executed with twelve layers of transparent umber and Prussian blue glazes, this canvas meditates on architectural liminality—where moonlit stone meets the encroaching forest edge.",
+                svgPlate: `
+                    <svg viewBox="0 0 400 300" class="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="moonGlow" cx="68%" cy="28%" r="48%">
+                                <stop offset="0%" stop-color="#E8DFC5"/>
+                                <stop offset="35%" stop-color="#6B756E"/>
+                                <stop offset="100%" stop-color="#141817"/>
+                            </radialGradient>
+                            <linearGradient id="waterRef" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#1D2624"/>
+                                <stop offset="100%" stop-color="#0D100F"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="400" height="300" fill="url(#moonGlow)"/>
+                        <!-- Distant Hills -->
+                        <path d="M0 185 Q110 140 220 175 T400 160 L400 220 L0 220 Z" fill="#1E2421"/>
+                        <!-- Moon Disc -->
+                        <circle cx="272" cy="84" r="18" fill="#F5EED8" opacity="0.9"/>
+                        <!-- Classical Stone Archway -->
+                        <path d="M45 300 L45 75 L155 75 L155 300 L125 300 L125 145 C125 115 75 115 75 145 L75 300 Z" fill="#181512"/>
+                        <path d="M75 145 C75 115 125 115 125 145" stroke="#7A6332" stroke-width="2" fill="none" opacity="0.6"/>
+                        <!-- Foreground Reflection -->
+                        <rect x="0" y="215" width="400" height="85" fill="url(#waterRef)"/>
+                        <ellipse cx="272" cy="245" rx="22" ry="3" fill="#D8CFAF" opacity="0.35"/>
+                        <ellipse cx="268" cy="262" rx="14" ry="2" fill="#D8CFAF" opacity="0.22"/>
+                    </svg>
+                `
+            },
+            {
+                id: "plate-2",
+                title: "Study for the Vegetative Matrix (Botanical Still Life)",
+                year: "2026",
+                medium: "Oil on Wood Panel",
+                dimensions: "24 × 30 in. (61.0 × 76.2 cm)",
+                notes: "A vanitas and botanical study pairing dried nightshade, an open folio manuscript, and an antique brass astrolabe illuminated by a single raking candle beam.",
+                svgPlate: `
+                    <svg viewBox="0 0 400 300" class="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <radialGradient id="candleLight" cx="38%" cy="42%" r="62%">
+                                <stop offset="0%" stop-color="#8A6838"/>
+                                <stop offset="45%" stop-color="#382819"/>
+                                <stop offset="100%" stop-color="#120E0B"/>
+                            </radialGradient>
+                        </defs>
+                        <rect width="400" height="300" fill="url(#candleLight)"/>
+                        <!-- Table Ledge -->
+                        <rect x="0" y="220" width="400" height="80" fill="#1B140E"/>
+                        <line x1="0" y1="220" x2="400" y2="220" stroke="#5A4328" stroke-width="1.5"/>
+                        <!-- Brass Vessel & Botanical Stems -->
+                        <path d="M130 220 C118 190 125 165 142 155 L158 155 C175 165 182 190 170 220 Z" fill="#6E5327"/>
+                        <path d="M150 155 C145 110 125 75 105 55" stroke="#3D4F35" stroke-width="2.5" fill="none"/>
+                        <path d="M150 155 C160 105 185 70 210 50" stroke="#4D6142" stroke-width="2.2" fill="none"/>
+                        <ellipse cx="115" cy="82" rx="14" ry="6" transform="rotate(-30 115 82)" fill="#4D6142"/>
+                        <ellipse cx="188" cy="85" rx="15" ry="6" transform="rotate(25 188 85)" fill="#3D4F35"/>
+                        <!-- Open Manuscript Folio -->
+                        <path d="M185 232 L255 215 L325 228 L255 248 Z" fill="#D8CEB8"/>
+                        <path d="M255 215 L255 248" stroke="#6B2D2D" stroke-width="1.2"/>
+                        <!-- Astrolabe Ring -->
+                        <circle cx="290" cy="182" r="28" stroke="#9C7B3E" stroke-width="3" fill="none"/>
+                        <line x1="262" y1="182" x2="318" y2="182" stroke="#9C7B3E" stroke-width="1.5"/>
+                    </svg>
+                `
+            },
+            {
+                id: "plate-3",
+                title: "The Hermit’s Lantern Above the Timberline",
+                year: "2024",
+                medium: "Oil on Canvas",
+                dimensions: "30 × 40 in. (76.2 × 101.6 cm)",
+                notes: "Inspired by Major Arcana IX, a solitary point of warm ochre light pierces an alpine twilight, contrasting human contemplation against geological permanence.",
+                svgPlate: `
+                    <svg viewBox="0 0 400 300" class="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="alpineSky" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#19212B"/>
+                                <stop offset="55%" stop-color="#3B4754"/>
+                                <stop offset="100%" stop-color="#7A6B5D"/>
+                            </linearGradient>
+                            <radialGradient id="lanternBeacon" cx="52%" cy="62%" r="22%">
+                                <stop offset="0%" stop-color="#FFF2C2"/>
+                                <stop offset="30%" stop-color="#D49B42" stop-opacity="0.7"/>
+                                <stop offset="100%" stop-color="#D49B42" stop-opacity="0"/>
+                            </radialGradient>
+                        </defs>
+                        <rect width="400" height="300" fill="url(#alpineSky)"/>
+                        <!-- Mountain Ridges -->
+                        <polygon points="0,240 125,95 250,220 340,120 400,190 400,300 0,300" fill="#232930"/>
+                        <polygon points="0,265 185,155 310,250 400,210 400,300 0,300" fill="#15181C"/>
+                        <!-- Lantern Glow -->
+                        <circle cx="208" cy="186" r="65" fill="url(#lanternBeacon)"/>
+                        <circle cx="208" cy="186" r="3.5" fill="#FFF8DC"/>
+                    </svg>
+                `
+            },
+            {
+                id: "plate-4",
+                title: "Cloister of the Northern Quadrant",
+                year: "2025",
+                medium: "Oil on Linen",
+                dimensions: "40 × 40 in. (101.6 × 101.6 cm)",
+                notes: "A geometric meditation on monastic colonnades and long afternoon shadows, exploring how architectural repetition induces stillness.",
+                svgPlate: `
+                    <svg viewBox="0 0 400 300" class="w-full h-full object-cover" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="300" fill="#2B2620"/>
+        // Initialize Page and Bind Delegated Event Listeners
+        document.addEventListener("DOMContentLoaded", () => {
+            renderCatalog();
+            renderGallery();
+
+            // Search input listener
+            const searchInput = document.getElementById("catalog-search");
+            searchInput.addEventListener("input", (e) => {
+                searchQuery = e.target.value.toLowerCase().trim();
+                renderCatalog();
+            });
+
+            // Filter button listeners
+            document.querySelectorAll(".filter-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    document.querySelectorAll(".filter-btn").forEach(b => {
+                        b.classList.remove("active", "bg-ink", "text-parchment", "border-ink");
+                        b.classList.add("bg-parchment", "text-ink", "border-hairline");
+                    });
+                    btn.classList.add("active", "bg-ink", "text-parchment", "border-ink");
+                    btn.classList.remove("bg-parchment", "text-ink", "border-hairline");
+
+                    activeCategory = btn.getAttribute("data-filter");
+                    renderCatalog();
+                });
+            });
+
+            // Reset filters button
+            document.getElementById("reset-filters-btn").addEventListener("click", resetCatalogFilters);
+
+            // Global action buttons (Download .bib, Open Inquiry, Close Modal)
+            document.querySelectorAll("[data-action='download-bib']").forEach(btn => {
+                btn.addEventListener("click", downloadFullBib);
+            });
+            document.querySelectorAll("[data-action='open-inquiry']").forEach(btn => {
+                btn.addEventListener("click", () => openInquiryModal());
+            });
+            document.querySelectorAll("[data-close-modal]").forEach(btn => {
+                btn.addEventListener("click", () => closeModal(btn.getAttribute("data-close-modal")));
+            });
+
+            // Delegated listener for Catalog Cards
+            document.getElementById("catalog-grid").addEventListener("click", (e) => {
+                const trigger = e.target.closest("[data-work-id]");
+                if (!trigger) return;
+                const workId = Number(trigger.getAttribute("data-work-id"));
+                const citeStyle = trigger.getAttribute("data-cite-style");
+                if (citeStyle) {
+                    openWorkModal(workId, true, citeStyle);
+                } else {
+                    openWorkModal(workId, false, null);
+                }
+            });
+
+            // Delegated listener for Vegetative Matrix Strata Tabs
+            document.getElementById("matrix-tabs-container").addEventListener("click", (e) => {
+                const tab = e.target.closest("[data-matrix-index]");
+                if (!tab) return;
+                selectMatrixNode(Number(tab.getAttribute("data-matrix-index")));
+            });
+
+            // Delegated listener for Gallery Plates
+            document.getElementById("gallery-grid").addEventListener("click", (e) => {
+                const figure = e.target.closest("[data-art-index]");
+                if (!figure) return;
+                openArtModal(Number(figure.getAttribute("data-art-index")));
+            });
+
+            // Citation Style Tabs & Copy Button
+            document.getElementById("citation-style-tabs").addEventListener("click", (e) => {
+                const btn = e.target.closest("[data-cite-style]");
+                if (!btn) return;
+                switchCitationStyle(btn.getAttribute("data-cite-style"));
+            });
+            document.getElementById("copy-citation-btn").addEventListener("click", copyCitationText);
+
+            // Artwork Lightbox Inquire Button
+            document.getElementById("art-inquire-btn").addEventListener("click", () => {
+                const title = document.getElementById("art-modal-title").textContent;
+                closeModal("art-modal");
+                openInquiryModal(title);
+            });
+
+            // Inquiry Form Submit & Reset
+            document.getElementById("inquiry-form").addEventListener("submit", handleInquirySubmit);
+            document.getElementById("reset-inquiry-btn").addEventListener("click", resetInquiryModal);
+
+            // Close modals on Escape key
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    ["work-modal", "art-modal", "inquiry-modal"].forEach(closeModal);
+                }
+            });
+        });
+
+        // HTML Escaping Helper for Safe Text Insertion
+        function escapeHtml(str) {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+
+        // Render Monograph & Research Catalog
+        function renderCatalog() {
+            const grid = document.getElementById("catalog-grid");
+            const emptyState = document.getElementById("catalog-empty");
+            grid.innerHTML = "";
+
+            const filtered = publications.filter(work => {
+                const matchesCat = activeCategory === "all" || work.category === activeCategory;
+                const matchesSearch = !searchQuery || 
+                    work.title.toLowerCase().includes(searchQuery) ||
+                    work.author.toLowerCase().includes(searchQuery) ||
+                    work.venue.toLowerCase().includes(searchQuery) ||
+                    (work.doi && work.doi.toLowerCase().includes(searchQuery)) ||
+                    work.abstract.toLowerCase().includes(searchQuery) ||
+                    work.category.toLowerCase().includes(searchQuery);
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                emptyState.classList.remove("hidden");
+                return;
+            } else {
+                emptyState.classList.add("hidden");
+            }
+
+            filtered.forEach(work => {
+                const card = document.createElement("article");
+                card.className = `border ${work.featured ? 'border-ink/45 bg-parchmentDark/45' : 'border-hairline bg-parchment'} p-6 rounded-sm flex flex-col justify-between transition-all hover:border-ink`;
+                
+                const doiBadge = work.doi 
+                    ? `<a href="${escapeHtml(work.url)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-mono text-burgundy hover:underline mt-1">DOI: ${escapeHtml(work.doi)} &#8599;</a>`
+                    : `<a href="${escapeHtml(work.url)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] italic text-slateSepia hover:text-burgundy hover:underline mt-1">${escapeHtml(work.venue)} &#8599;</a>`;
+
+                card.innerHTML = `
+                    <div>
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                            <span class="text-[11px] uppercase tracking-[0.14em] text-burgundy font-bold">${escapeHtml(work.category)}</span>
+                            <span class="text-xs text-slateSepia">${escapeHtml(work.year)}</span>
+                        </div>
+                        <h3 class="text-lg sm:text-xl font-normal text-ink leading-snug mb-1.5">
+                            ${escapeHtml(work.title)}
+                        </h3>
+                        <p class="text-xs italic text-slateSepia">${escapeHtml(work.author)} &bull; ${escapeHtml(work.venue)}</p>
+                        <div class="mb-3">${doiBadge}</div>
+                        <p class="text-sm text-ink/85 leading-relaxed line-clamp-3 mb-5">
+                            ${escapeHtml(work.abstract)}
+                        </p>
+                    </div>
+                    <div class="pt-4 border-t border-hairline flex flex-wrap items-center justify-between gap-2">
+                        <button type="button" data-work-id="${work.id}" class="text-xs uppercase tracking-[0.14em] text-ink hover:text-burgundy font-bold flex items-center gap-1.5 transition-colors">
+                            <span>Abstract &amp; Cite</span>
+                            <span>&rarr;</span>
+                        </button>
+                        <div class="flex items-center gap-1.5">
+                            <button type="button" data-work-id="${work.id}" data-cite-style="BibTeX" class="text-[11px] uppercase tracking-[0.12em] text-slateSepia hover:text-ink border border-hairline px-2 py-1 rounded-sm">
+                                BibTeX
+                            </button>
+                            <button type="button" data-work-id="${work.id}" data-cite-style="Chicago" class="text-[11px] uppercase tracking-[0.12em] text-slateSepia hover:text-ink border border-hairline px-2 py-1 rounded-sm">
+                                Cite
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function resetCatalogFilters() {
+            activeCategory = "all";
+            searchQuery = "";
+            document.getElementById("catalog-search").value = "";
+            document.querySelectorAll(".filter-btn").forEach((b, idx) => {
+                if (idx === 0) {
+                    b.classList.add("active", "bg-ink", "text-parchment", "border-ink");
+                    b.classList.remove("bg-parchment", "text-ink", "border-hairline");
+                } else {
+                    b.classList.remove("active", "bg-ink", "text-parchment", "border-ink");
+                    b.classList.add("bg-parchment", "text-ink", "border-hairline");
+                }
+            });
+            renderCatalog();
+        }
+
+        // Interactive Vegetative Matrix Strata Selector
+        const matrixStrata = [
+            {
+                title: "Stratum I — Rider-Waite-Smith Tarot Semiotics:",
+                text: "Analyzes Pamela Colman Smith’s botanical landscapes, vegetative wands, and Major Arcana thresholds as a codified visual language encoding cyclical death, seasonal fertility, and initiatory transformation."
+            },
+            {
+                title: "Stratum II — Anthropological Modernism:",
+                text: "Connects early twentieth-century esoteric iconography with Frazerian comparative anthropology and Turnerian liminality, showing how mythic structures migrate into modern literary consciousness."
+            },
+            {
+                title: "Stratum III — Postmodern Semiotics:",
+                text: "Examines the Tarot and vegetative archive as an open, non-linear rhizome of signifiers where symbolic meaning resists fixed closure across literature, film, and digital culture."
+            }
+        ];
+
+        function selectMatrixNode(index) {
+            // Update tab buttons
+            [0, 1, 2].forEach(i => {
+                const btn = document.getElementById(`matrix-btn-${i}`);
+                const svgNode = document.getElementById(`svg-node-${i}`);
+                if (i === index) {
+                    btn.classList.remove("border-hairline", "bg-parchment/60");
+                    btn.classList.add("border-burgundy", "bg-parchment");
+                    btn.querySelector("span:first-child").classList.replace("text-ink", "text-burgundy");
+                    if (svgNode) svgNode.setAttribute("fill", "#6B2D2D");
+                } else {
+                    btn.classList.add("border-hairline", "bg-parchment/60");
+                    btn.classList.remove("border-burgundy", "bg-parchment");
+                    btn.querySelector("span:first-child").classList.replace("text-burgundy", "text-ink");
+                    if (svgNode) svgNode.setAttribute("fill", "#FAF8F5");
+                }
+            });
+
+            // Update description text
+            const panel = document.getElementById("matrix-detail-panel");
+            panel.innerHTML = `<strong class="block text-ink mb-1">${matrixStrata[index].title}</strong>${matrixStrata[index].text}`;
+        }
+
+        // Render Fine Art Oil Paintings Gallery
+        function renderGallery() {
+            const gallery = document.getElementById("gallery-grid");
+            gallery.innerHTML = "";
+
+            artworks.forEach((art, idx) => {
+                const figure = document.createElement("figure");
+                figure.className = "group cursor-pointer flex flex-col";
+                figure.setAttribute("data-art-index", String(idx));
+
+                figure.innerHTML = `
+                    <div class="gilt-frame w-full aspect-[4/3] overflow-hidden mb-4 transition-transform duration-300 group-hover:-translate-y-1">
+                        ${art.svgPlate}
+                    </div>
+                    <figcaption class="border-t border-hairline pt-3">
+                        <div class="flex items-baseline justify-between gap-2">
+                            <h3 class="text-base font-normal text-ink group-hover:text-burgundy transition-colors">
+                                ${escapeHtml(art.title)}
+                            </h3>
+                            <span class="text-xs text-slateSepia shrink-0">${escapeHtml(art.year)}</span>
+                        </div>
+                        <p class="text-xs italic text-slateSepia mt-0.5">${escapeHtml(art.medium)} &bull; ${escapeHtml(art.dimensions)}</p>
+                        <p class="text-xs text-ink/80 mt-2 line-clamp-2 leading-relaxed">${escapeHtml(art.notes)}</p>
+                    </figcaption>
+                `;
+                gallery.appendChild(figure);
+            });
+        }
+
+        // Open Work Abstract & Citation Modal
+        function openWorkModal(id, focusCitation = false, preferredStyle = null) {
+            const work = publications.find(w => w.id === id);
+            if (!work) return;
+
+            currentModalWork = work;
+            document.getElementById("work-modal-category").textContent = work.category;
+            document.getElementById("work-modal-title").textContent = work.title;
+            document.getElementById("work-modal-meta").textContent = `${work.author} • ${work.venue} (${work.year})`;
+            document.getElementById("work-modal-abstract").textContent = work.abstract;
+
+            const doiBar = document.getElementById("work-modal-doi-bar");
+            const doiText = document.getElementById("work-modal-doi");
+            const urlLink = document.getElementById("work-modal-url");
+            if (work.doi) {
+                doiBar.classList.remove("hidden");
+                doiText.textContent = work.doi;
+                urlLink.href = work.url;
+            } else {
+                doiBar.classList.add("hidden");
+            }
+
+            const themesList = document.getElementById("work-modal-themes");
+            themesList.innerHTML = work.themes.map(t => `<li>${t}</li>`).join("");
+
+            switchCitationStyle(preferredStyle || currentCitationStyle);
+            document.getElementById("copy-feedback").classList.add("opacity-0");
+
+            const modal = document.getElementById("work-modal");
+            modal.classList.remove("hidden");
+
+            if (focusCitation) {
+                setTimeout(() => {
+                    document.getElementById("citation-output").scrollIntoView({ behavior: "smooth" });
+                }, 100);
+            }
+        }
+
+        // Format Citation (Chicago / MLA / APA / BibTeX)
+        function switchCitationStyle(style) {
+            currentCitationStyle = style;
+            ["Chicago", "MLA", "APA", "BibTeX"].forEach(s => {
+                const btn = document.getElementById(`cite-btn-${s}`);
+                if (s === style) {
+                    btn.classList.add("bg-ink", "text-parchment", "border-ink");
+                    btn.classList.remove("bg-parchment", "text-ink", "border-hairline");
+                } else {
+                    btn.classList.remove("bg-ink", "text-parchment", "border-ink");
+                    btn.classList.add("bg-parchment", "text-ink", "border-hairline");
+                }
+            });
+
+            if (!currentModalWork) return;
+            const w = currentModalWork;
+            const outputEl = document.getElementById("citation-output");
+            let formatted = "";
+
+            const loc = w.doi ? `https://doi.org/${w.doi}` : w.url;
+
+            if (style === "BibTeX") {
+                outputEl.classList.remove("font-serif");
+                outputEl.classList.add("font-mono", "whitespace-pre-wrap");
+                outputEl.textContent = w.bibtex;
+                return;
+            } else {
+                outputEl.classList.add("font-serif");
+                outputEl.classList.remove("font-mono", "whitespace-pre-wrap");
+            }
+
+            if (style === "Chicago") {
+                formatted = `${escapeHtml(w.author)}. “${escapeHtml(w.title)}.” <em>${escapeHtml(w.venue)}</em>${w.year !== "n.d." ? ` (${escapeHtml(w.year)})` : ""}. ${escapeHtml(loc)}.`;
+            } else if (style === "MLA") {
+                formatted = `${escapeHtml(w.author)}. “${escapeHtml(w.title)}.” <em>${escapeHtml(w.venue)}</em>, ${w.year !== "n.d." ? escapeHtml(w.year) + ", " : ""}${escapeHtml(loc)}.`;
+            } else if (style === "APA") {
+                const yr = w.year !== "n.d." ? `(${escapeHtml(w.year)})` : "(n.d.)";
+                formatted = `${escapeHtml(w.author)}. ${yr}. <em>${escapeHtml(w.title)}</em>. ${escapeHtml(w.venue)}. ${escapeHtml(loc)}`;
+            }
+
+            outputEl.innerHTML = formatted;
+        }
+
+        // Download Full .bib File
+        function downloadFullBib() {
+            const blob = new Blob([rawBibTeXFile], { type: "application/x-bibtex;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "synjyn-publishing-works.bib";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Safe Clipboard Copy via execCommand fallback
+        function copyTextToClipboard(text) {
+            const tempInput = document.createElement("textarea");
+            tempInput.value = text;
+            tempInput.style.position = "fixed";
+            tempInput.style.opacity = "0";
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand("copy");
+            } catch (err) {
+                console.error("Clipboard copy failed", err);
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        function copyCitationText() {
+            const plainText = document.getElementById("citation-output").innerText;
+            copyTextToClipboard(plainText);
+            const feedback = document.getElementById("copy-feedback");
+            feedback.classList.remove("opacity-0");
+            setTimeout(() => feedback.classList.add("opacity-0"), 2500);
+        }
+
+        // Open Artwork Lightbox
+        function openArtModal(index) {
+            const art = artworks[index];
+            if (!art) return;
+
+            document.getElementById("art-modal-canvas-container").innerHTML = art.svgPlate;
+            document.getElementById("art-modal-title").textContent = art.title;
+            document.getElementById("art-modal-specs").textContent = `${art.medium} • ${art.dimensions} • ${art.year} (Signed SYNJYN)`;
+            document.getElementById("art-modal-notes").textContent = art.notes;
+
+            document.getElementById("art-modal").classList.remove("hidden");
+        }
+
+        // Open External Repository Details Modal
+        function openRepoModal(title, url, desc) {
+            document.getElementById("repo-modal-title").textContent = title;
+            document.getElementById("repo-modal-url").textContent = url;
+            document.getElementById("repo-modal-desc").textContent = desc;
+            document.getElementById("repo-copy-msg").classList.add("hidden");
+            document.getElementById("repo-modal").classList.remove("hidden");
+        }
+
+        function copyRepoUrl() {
+            const url = document.getElementById("repo-modal-url").textContent;
+            copyTextToClipboard(url);
+            document.getElementById("repo-copy-msg").classList.remove("hidden");
+        }
+
+        // Open Academic Inquiry Modal
+        function openInquiryModal(prefillSubject = null) {
+            resetInquiryModal();
+            if (prefillSubject) {
+                document.getElementById("inq-subject").value = `Atelier Inquiry: ${prefillSubject}`;
+            }
+            document.getElementById("inquiry-modal").classList.remove("hidden");
+        }
+
+        function handleInquirySubmit(e) {
+            e.preventDefault();
+            document.getElementById("inquiry-form").classList.add("hidden");
+            document.getElementById("inquiry-success").classList.remove("hidden");
+        }
+
+        function resetInquiryModal() {
+            document.getElementById("inquiry-form").reset();
+            document.getElementById("inquiry-form").classList.remove("hidden");
+            document.getElementById("inquiry-success").classList.add("hidden");
+        }
+
+        // Generic Close Modal Helper
+        function closeModal(modalId) {
+            const el = document.getElementById(modalId);
+            if (el) el.classList.add("hidden");
+        }
+
+        // Close modal when clicking backdrop
+        window.addEventListener("click", (e) => {
+            ["work-modal", "art-modal", "inquiry-modal"].forEach(id => {
+                const modal = document.getElementById(id);
+                if (e.target === modal) {
+                    closeModal(id);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
