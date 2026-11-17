@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Synjyn Press — Paul Napierskie | Synjyn Publishing</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #EEF0EC;
+  --surface: #E3E7E1;
+  --surface-alt: #D8DDD5;
+  --fg: #1B2523;
+  --muted: #566360;
+  --accent: #1F5A50;
+  --brass: #8A6A2B;
+  --rule: #B9C2BC;
+  --display: 'Poiret One', 'Century Gothic', sans-serif;
+  --body: 'Spectral', Georgia, serif;
+  --mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1A18;
+    --surface: #16241F;
+    --surface-alt: #1D2F29;
+    --fg: #E4E9E3;
+    --muted: #9AA9A3;
+    --accent: #6FC2AF;
+    --brass: #C9A55B;
+    --rule: #2A3C37;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #0F1A18;
+  --surface: #16241F;
+  --surface-alt: #1D2F29;
+  --fg: #E4E9E3;
+  --muted: #9AA9A3;
+  --accent: #6FC2AF;
+  --brass: #C9A55B;
+  --rule: #2A3C37;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+.wrap { max-width: 920px; margin: 0 auto; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+
+/* Top Navigation */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-block: 20px;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-wrap: wrap;
+}
+.top-left { display: flex; align-items: center; gap: 12px; }
+.top nav { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; }
+.top a { color: var(--muted); text-decoration: none; }
+.top a:hover { color: var(--accent); }
+.theme-btn {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.theme-btn:hover { border-color: var(--brass); color: var(--fg); }
+
+/* Hero Title */
+.title {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: center;
+  padding-block: 64px 56px;
+}
+.seal { width: 100%; max-width: 200px; height: auto; color: var(--brass); }
+.seal .ln { stroke: currentColor; fill: none; stroke-width: 1.4; }
+h1 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(46px, 9vw, 88px);
+  line-height: 1;
+  letter-spacing: .06em;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+.tag { font-style: italic; font-size: 20px; color: var(--muted); max-width: 36ch; margin: 0; }
+.legal {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .1em;
+  color: var(--brass);
+  text-transform: uppercase;
+  margin-top: 22px;
+}
+
+/* Sections */
+h2 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 32px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin: 0 0 22px;
+  text-wrap: balance;
+}
+section { padding-block: 52px; border-top: 1px solid var(--rule); }
+.prose { max-width: 65ch; }
+.prose p { margin: 0 0 1.1em; }
+
+/* Discipline Columns */
+.cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+  margin-top: 24px;
+}
+.cols h3 {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 6px;
+  font-weight: 500;
+}
+.cols p { margin: 0; font-size: 15.5px; color: var(--muted); }
+
+/* Author Profile Grid (Integrated from Author Page) */
+.author-grid {
+  display: grid;
+  grid-template-columns: 1fr 290px;
+  gap: 36px;
+  align-items: start;
+}
+.author-sub {
+  margin-top: 26px;
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+}
+.author-sub h3 {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+.infobox {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  padding: 22px;
+}
+.infobox-head {
+  text-align: center;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.infobox-title {
+  font-family: var(--display);
+  font-size: 22px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+.infobox-sub {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+.infobox dl {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 0;
+  font-size: 14.5px;
+}
+.infobox dt {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 2px;
+}
+.infobox dd { margin: 0; line-height: 1.45; }
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  margin-top: 4px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+}
+
+/* Catalog Filters & Ledger */
+.filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.filters button {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--rule);
+  padding: 7px 14px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+.filters button[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+.ledger { list-style: none; margin: 0; padding: 0; }
+.ledger li {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 6px 20px;
+  padding-block: 22px;
+  border-top: 1px solid var(--rule);
+}
+.ledger li:last-child { border-bottom: 1px solid var(--rule); }
+.yr { font-family: var(--mono); font-size: 13px; color: var(--brass); padding-top: 5px; }
+.ledger h3 { font-size: 19px; font-weight: 500; margin: 0 0 4px; line-height: 1.3; text-wrap: balance; }
+.ledger p { margin: 0 0 8px; font-size: 15.5px; color: var(--muted); max-width: 64ch; }
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 16px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  min-width: 0;
+}
+.meta a { overflow-wrap: anywhere; }
+.kind { letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
+details { margin-top: 10px; }
+details summary {
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  width: fit-content;
+}
+.abs { margin: 12px 0 0; max-width: 64ch; font-size: 16px; color: var(--fg); }
+.cite {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  background: var(--surface);
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+/* Sources Cited & References */
+.bib-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  max-width: 72ch;
+}
+.bib-list li {
+  padding-left: 22px;
+  text-indent: -22px;
+  font-size: 15.5px;
+  color: var(--fg);
+}
+.bib-note { color: var(--muted); font-style: italic; }
+.ref-list {
+  margin: 0;
+  padding-left: 22px;
+  display: grid;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--muted);
+  max-width: 72ch;
+}
+
+/* Colophon Imprint Box */
+.imprint { background: var(--surface); padding: 28px; margin-top: 8px; border: 1px solid var(--rule); }
+.imprint dl { display: grid; grid-template-columns: max-content 1fr; gap: 8px 24px; margin: 0; font-size: 15.5px; }
+.imprint dt { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+.imprint dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+
+footer {
+  border-top: 1px solid var(--rule);
+  padding-block: 32px 44px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: .06em;
+  line-height: 1.8;
+}
+.cats {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--rule);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  .author-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .title { grid-template-columns: 1fr; gap: 24px; padding-block: 40px; }
+  .seal { max-width: 130px; }
+  .ledger li { grid-template-columns: 1fr; }
+  .imprint dl { grid-template-columns: 1fr; }
+  .imprint dt { padding-top: 10px; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="top-left">
+      <span>Kansas City, Missouri</span>
+      <span>&middot;</span>
+      <span>Paul Napierskie</span>
+    </div>
+    <nav aria-label="Sections">
+      <a href="#about">Imprint</a>
+      <a href="#author">Author</a>
+      <a href="#catalog">Catalog</a>
+      <a href="#sources">Sources</a>
+      <a href="#colophon">Colophon</a>
+      <button type="button" class="theme-btn" id="themeToggle" aria-label="Toggle color theme">Theme</button>
+    </nav>
+  </header>
+
+  <div class="title">
+    <svg class="seal" viewBox="0 0 200 200" role="img" aria-label="Synjyn Press seal: an arched doorway inside concentric rings">
+      <circle class="ln" cx="100" cy="100" r="94"/>
+      <circle class="ln" cx="100" cy="100" r="86" stroke-dasharray="2 5"/>
+      <circle class="ln" cx="100" cy="100" r="70"/>
+      <path class="ln" d="M66 148 V102 a34 34 0 0 1 68 0 V148 Z"/>
+      <path class="ln" d="M80 148 V104 a20 20 0 0 1 40 0 V148"/>
+      <path class="ln" d="M100 148 V84"/>
+      <path class="ln" d="M52 148 H148"/>
+      <path class="ln" d="M100 30 L106 40 L100 50 L94 40 Z"/>
+      <path class="ln" d="M100 170 L106 160 L100 150 L94 160 Z" transform="translate(0 6)"/>
+    </svg>
+    <div>
+      <h1>Synjyn<br>Press</h1>
+      <p class="tag">Scholarship from the threshold: ritual, symbol, memory and the spaces between.</p>
+      <p class="legal">Paul Napierskie &middot; Synjyn Publishing &middot; Imprint est. 2026</p>
+    </div>
+  </div>
+
+  <!-- IMPRINT SECTION -->
+  <section id="about">
+    <h2>The Imprint</h2>
+    <div class="prose">
+      <p>Synjyn Press (Synjyn Publishing) is the independent academic imprint of Paul Napierskie. It publishes interdisciplinary scholarship that sits between disciplines: historical anthropology, environmental sustainability, literary criticism, ritual and symbol, architecture, and material memory.</p>
+      <p>The press serves as the single publisher of record for Paul Napierskie's research archive, monographs, scholarly papers, theses, and visual editions, uniting all works under one name and one catalog.</p>
+    </div>
+    <div class="cols">
+      <div><h3>Anthropology</h3><p>Liminality, ritual, sensory ethnography, spatial theory, and material social facts, from Turner and van Gennep to Durkheim and Boas.</p></div>
+      <div><h3>Literary Criticism</h3><p>Modernist fiction, cinema, and contemporary digital culture read through ritual, architectural decay, and symbolic theory.</p></div>
+      <div><h3>Western Esotericism</h3><p>Tarot iconography, vegetation myths, and the migration of pre-modern sacred symbols into modern thought.</p></div>
+      <div><h3>Visual Art &amp; Music</h3><p>Print-ready engravings, steampunk and art deco book illustration, and acoustic percussion frameworks.</p></div>
+    </div>
+  </section>
+
+  <!-- INTEGRATED AUTHOR PROFILE SECTION -->
+  <section id="author">
+    <h2>Founder, Publisher &amp; Author</h2>
+    <div class="author-grid">
+      <div class="prose">
+        <p><strong>Paul Napierskie</strong> (born September 1973 in Neosho, Missouri) is an American socio-cultural anthropologist, writer, educator, independent researcher, visual artist, and musician. He founded Synjyn Press and serves as its publisher, editor, and author.</p>
+        <p>He pursued higher education at Southern New Hampshire University, earning dual Bachelor of Arts degrees (B.A., B.A.) alongside graduate study in English Literature. His interdisciplinary scholarship bridges historical anthropology, environmental sustainability, literary criticism, semiotics, folklore, and Western esotericism—examining how communities construct meaning, adapt to environmental shifts, and preserve cultural traditions through spatial thresholds and material memory.</p>
+        <p>In <em>The Vegetative Matrix</em>, he applies postmodern semiotic analysis to the Rider-Waite-Smith Tarot, tracing structural and iconographic continuity from Hans Holbein the Younger's 1526 <em>Danse Macabre</em> woodcuts to Pamela Colman Smith's illustrations. His eleven-chapter monograph <em>Liminal Rhythms I&ndash;XI</em> synthesizes childhood memory in Sarcoxie, Missouri with Durkheimian social facts, modernist literature, and ritual theory.</p>
+
+        <div class="author-sub">
+          <h3>Scholarship &amp; Research Themes</h3>
+          <p>Napierskie's scholarly work focuses primarily on liminality, sensory ethnography, Western esotericism, and spatial theory. His major monographs and papers explore the intricate relationships between institutional anomie, architectural decay, temporal suspension, and ritual migration across both literary texts and contemporary digital culture.</p>
+        </div>
+
+        <div class="author-sub">
+          <h3>Visual Art &amp; Music</h3>
+          <p>Alongside his academic research, Napierskie is an active visual artist and musician. He produces print-ready visual artwork, book cover illustrations, and detailed engravings embodying steampunk and art deco motifs. In his musical compositions, he designs intricate instrumental arrangements and percussion frameworks tailored for atmospheric and horror fiction narratives.</p>
+        </div>
+      </div>
+
+      <aside class="infobox" aria-label="Author biographical summary">
+        <div class="infobox-head">
+          <div class="infobox-title">Paul Napierskie</div>
+          <div class="infobox-sub">Synjyn Publishing</div>
+        </div>
+        <dl>
+          <div>
+            <dt>Born</dt>
+            <dd>September 1973<br>Neosho, Missouri, U.S.</dd>
+          </div>
+          <div>
+            <dt>Education</dt>
+            <dd>Southern New Hampshire University (B.A., B.A.)<br>Master's in English Literature</dd>
+          </div>
+          <div>
+            <dt>Occupation</dt>
+            <dd>Socio-cultural anthropologist, writer, educator, independent researcher, visual artist, musician</dd>
+          </div>
+          <div>
+            <dt>Fields</dt>
+            <dd>Socio-cultural anthropology, literary criticism, spatial theory, Western esotericism</dd>
+          </div>
+          <div>
+            <dt>Imprint</dt>
+            <dd>Synjyn Press / Synjyn Publishing (est. 2026)</dd>
+          </div>
+          <div>
+            <dt>Connect &amp; Profiles</dt>
+            <dd class="social-links">
+              <a href="#catalog">Catalog</a>
+              <span>&middot;</span>
+              <a href="#sources">Bibliography</a>
+              <span>&middot;</span>
+              <a href="https://ssrn.com" target="_blank" rel="noopener">SSRN</a>
+              <span>&middot;</span>
+              <a href="https://www.researchgate.net" target="_blank" rel="noopener">ResearchGate</a>
+              <span>&middot;</span>
+              <a href="https://www.academia.edu" target="_blank" rel="noopener">Academia.edu</a>
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <!-- UNIFIED CATALOG SECTION -->
+  <section id="catalog">
+    <h2>Selected Works &amp; Catalog</h2>
+    <p class="prose" style="color:var(--muted);margin:0 0 20px">Complete bibliography of monographs, scholarly papers, essays, conference presentations, and theses by Paul Napierskie under Synjyn Press. Filter by format or expand any entry for its abstract and citation.</p>
+    <div class="filters" role="group" aria-label="Filter catalog">
+      <button type="button" data-f="all" aria-pressed="true">All (14)</button>
+      <button type="button" data-f="Monograph" aria-pressed="false">Monographs</button>
+      <button type="button" data-f="Paper" aria-pressed="false">Papers &amp; Essays</button>
+      <button type="button" data-f="Thesis" aria-pressed="false">Thesis &amp; Talks</button>
+    </div>
+    <ul class="ledger" id="ledger"></ul>
+  </section>
+
+  <!-- SOURCES CITED & REFERENCES SECTION -->
+  <section id="sources">
+    <h2>Sources Cited &amp; Theoretical Framework</h2>
+    <p class="prose" style="color:var(--muted);margin:0 0 24px">Key theoretical, anthropological, and primary literary sources cited across Paul Napierskie's monographs and essays.</p>
+    <ul class="bib-list">
+      <li><strong>Bachelard, Gaston</strong> (1994) [1958]. <em>The Poetics of Space</em>. Translated by Maria Jolas. Beacon Press. <span class="bib-note">Cited in analyses of domestic interiority, windows, and intimate spatial memory.</span></li>
+      <li><strong>Boas, Franz</strong> (1911). <em>The Mind of Primitive Man</em>. Macmillan. <span class="bib-note">Used to establish cultural and historical perception of physical environments over geographical determinism.</span></li>
+      <li><strong>Durkheim, Émile</strong> (1895; 1912). <em>The Rules of Sociological Method</em> and <em>The Elementary Forms of Religious Life</em>. <span class="bib-note">Drawn upon for theories of material social facts and collective effervescence in ritual and live music.</span></li>
+      <li><strong>Eliade, Mircea</strong> (1957). <em>The Sacred and the Profane: The Nature of Religion</em>. <span class="bib-note">Referenced regarding sacred thresholds, cemeteries, and abandoned ecclesiastical spaces.</span></li>
+      <li><strong>Frazer, Sir James George</strong> (1911; 1922). <em>The Golden Bough: A Study in Magic and Religion</em>. Macmillan. <span class="bib-note">Foundational to Napierskie's analysis of dying-and-rising vegetation deities, the King of the Wood at Nemi, and ritual succession.</span></li>
+      <li><strong>Holbein, Hans the Younger</strong> (1538) [1526 blocks]. <em>Les Simulachres et Historiées Faces de la Mort (Danse Macabre)</em>. Lyon. <span class="bib-note">Primary visual source analyzed in The Vegetative Matrix alongside early proofs at the British Museum and Kupferstichkabinett Basel.</span></li>
+      <li><strong>Kafka, Franz</strong> (1925; 1926). <em>The Trial</em> and <em>The Castle</em>. <span class="bib-note">Examined as modernist depictions of bureaucratic labyrinths and inaccessible architectural thresholds.</span></li>
+      <li><strong>Mauss, Marcel</strong> (1934). "Techniques of the Body" (<em>Les techniques du corps</em>). <span class="bib-note">Applied to embodied knowledge, muscle memory, and rhythmic coordination in musical performance.</span></li>
+      <li><strong>Ovid</strong>. <em>Metamorphoses</em>, Book X (lines 298&ndash;502). <span class="bib-note">Classical primary text for comparative mythic studies on Myrrha, Adonis, and botanical metamorphosis.</span></li>
+      <li><strong>Turner, Victor</strong> (1969). <em>The Ritual Process: Structure and Anti-Structure</em>. Aldine. <span class="bib-note">Core framework for liminal states ("betwixt and between") and egalitarian communitas.</span></li>
+      <li><strong>van Gennep, Arnold</strong> (1909). <em>The Rites of Passage</em>. <span class="bib-note">Structural model of separation, transition, and incorporation applied to spatial and life-course thresholds.</span></li>
+      <li><strong>Weston, Jessie L.</strong> (1920). <em>From Ritual to Romance</em>. Cambridge University Press. <span class="bib-note">Methodological basis for tracing the migration of fertility rituals into Grail romances and modernist literature such as T. S. Eliot's The Waste Land (1922).</span></li>
+      <li><strong>Woolf, Virginia</strong> (1927). <em>To the Lighthouse</em>. <span class="bib-note">Primary literary text analyzed in studies of the empty house ("Time Passes"), domestic thresholds, and material persistence.</span></li>
+    </ul>
+
+    <div class="author-sub" style="margin-top:36px">
+      <h3>Archive References</h3>
+      <ol class="ref-list">
+        <li>Napierskie, Paul. <em>Biography: Paul Napierskie and Works Cited</em>. Independent Scholar Archive.</li>
+        <li>Napierskie, Paul (2026). <em>Liminal Rhythms: Music, Identity, and the Spaces Between (I&ndash;XI)</em>. ResearchGate.</li>
+        <li>Napierskie, Paul (2026). "The Vegetative Matrix: The Rider-Waite-Smith Tarot, Anthropological Modernism, and Postmodern Semiotics". SSRN.</li>
+        <li>Napierskie, Paul. <em>Myrrha and the Myth of Adonis: A Short Account with Reference to Frazer and Weston</em>.</li>
+        <li>Napierskie, Paul (2026). <em>Indexed Scholarly Works Registry (SSRN &amp; ResearchGate Bibliography)</em>.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- COLOPHON SECTION -->
+  <section id="colophon">
+    <h2>Colophon</h2>
+    <div class="imprint">
+      <dl>
+        <dt>Imprint</dt><dd>Synjyn Press</dd>
+        <dt>Legal Name</dt><dd>Synjyn Publishing</dd>
+        <dt>Founder &amp; Author</dt><dd>Paul Napierskie</dd>
+        <dt>Publisher &amp; Editor</dt><dd>Paul Napierskie</dd>
+        <dt>Location</dt><dd>Kansas City, Missouri, United States</dd>
+        <dt>Founded</dt><dd>2026</dd>
+        <dt>Seal</dt><dd>An arched doorway within concentric rings: a threshold, the place the press works from.</dd>
+        <dt>Typography</dt><dd>Poiret One, Spectral, IBM Plex Mono</dd>
+      </dl>
+    </div>
+  </section>
+
+  <footer>
+    <div>&copy; 2026 Synjyn Publishing &middot; Paul Napierskie. Works remain the property of their author unless stated.</div>
+    <div class="cats">Index: 1973 births &middot; People from Neosho, Missouri &middot; People from Sarcoxie, Missouri &middot; American anthropologists &middot; Southern New Hampshire University alumni &middot; American writers &middot; Synjyn Publishing</div>
+  </footer>
+</div>
+
+<script>
+var W = [
+  ["2026", "Betwixt and Between the Ruins", "Paper", "Architectural decay, abandoned interiors and material ruins read through Victor Turner's liminality and temporal suspension.", "Elsevier BV / SSRN", "10.2139/ssrn.7550662"],
+  ["2026", "Symbolic Migration and the Labyrinth: Ritual, Liminality, and the Missing Exit in Modern Literature, Film, and Digital Culture", "Paper", "The labyrinth and the obstructed threshold across modernist fiction, cinema and digital environments.", "Elsevier BV / SSRN", "10.2139/ssrn.7591019"],
+  ["2026", "The Golden Bough and the Migration of the Sacred", "Paper", "Frazer's sacred grove at Nemi, and how ritual succession and vegetation myths move into modern symbolic systems.", "Elsevier BV / SSRN", "10.2139/ssrn.7548941"],
+  ["2026", "The Thing: Identity, Consciousness, and Twisted Panspermia", "Paper", "A three-part inquiry into John Carpenter's 1982 film: cellular mimicry, epistemological paranoia and bodily boundaries.", "Elsevier BV / SSRN", "10.2139/ssrn.7661878"],
+  ["2026", "The Vegetative Matrix: The Rider-Waite-Smith Tarot, Anthropological Modernism, and Postmodern Semiotics", "Monograph", "Structural and iconographic continuity between Holbein's 1526 woodcuts and Pamela Colman Smith's tarot illustrations. Also indexed on Academia.edu.", "Elsevier BV / SSRN", "10.2139/ssrn.7578619"],
+  ["2026", "What the Silence Is Shaped Like: Music, Memory, and the Spaces Between", "Paper", "Acoustic intervals, phenomenological time and collective synchronization in live performance and domestic silence. Also indexed on ResearchGate (doi:10.13140/RG.2.2.20678.23369).", "Elsevier BV / SSRN", "10.2139/ssrn.7613679"],
+  ["2026", "The Tin Snail: Liminality, Material Identity, and the In-Between Self in Baum and Woolf", "Paper", "Artificial embodiment in Baum's Tin Woodman set beside interior consciousness in Woolf's domestic spaces.", "ResearchGate", "10.13140/RG.2.2.23567.55201"],
+  ["2026", "The Material Echo: Architecture as a Distributed Memory System", "Paper", "How buildings, household objects and acoustic environments keep social facts after their occupants leave.", "ResearchGate", "10.13140/RG.2.2.36605.52964"],
+  ["2026", "Liminal Rhythms I–XI", "Monograph", "Eleven chapters joining childhood memory in Sarcoxie, Missouri, Durkheimian social facts, modernist literature and ritual theory.", "ResearchGate", "10.13140/RG.2.2.30504.12803"],
+  ["2026", "Symbolic Migration: Ritual, Philosophy, Literature, and Ecological Consciousness in Western Esotericism", "Monograph", "Pre-modern ritual symbols and ecological motifs as they move into Western esoteric philosophy and literary criticism.", "ResearchGate", "10.13140/RG.2.2.12304.37123"],
+  ["2026", "Voyager and Liminality", "Paper", "Additional indexed work from the author's bibliography examining thresholds, distance, and liminal passage.", "ResearchGate", ""],
+  ["2026", "The Tin Snail (Thesis): Liminality, Material Identity, and the In-Between Self in Baum, Woolf, and Napierskie", "Thesis", "Interdisciplinary thesis in anthropology and English literature.", "Thesis", ""],
+  ["2026", "THE THING: Identity, Consciousness, Simulation, and Twisted Panspermia", "Thesis", "Conference paper presented at the Kansas City Conference 2026.", "Conference", ""],
+  ["n.d.", "American Modernism: "The Snows of Kilimanjaro"", "Paper", "Essay on Ernest Hemingway's 1936 short story "The Snows of Kilimanjaro," read as an example of American modernism.", "Academia.edu", ""]
+];
+
+var ABS = [
+  "Examines architectural decay, abandoned interiors and material ruins through Victor Turner's account of liminality. Ruined spaces are read as sites of temporal suspension, where the ordinary order of occupation has ended and no new order has yet formed.",
+  "Traces the labyrinth and the obstructed threshold across modernist fiction, cinema and contemporary digital environments. Drawing on van Gennep, Turner and Kafka's bureaucratic architectures, it argues that the missing exit marks a recurring form of ritual migration, in which passage begins but incorporation is withheld.",
+  "Returns to Frazer's sacred grove at Nemi and the King of the Wood to ask how ritual succession and dying-and-rising vegetation myths travel into modern symbolic systems. Weston's reading of fertility ritual in Grail romance and The Waste Land supplies the method for following that movement.",
+  "A three-part scholarly inquiry into John Carpenter's 1982 film. It analyzes cellular mimicry, epistemological paranoia and the instability of bodily boundaries, and asks what the film's panspermia says about identity and consciousness.",
+  "Demonstrates structural and iconographic continuity between Hans Holbein the Younger's 1526 Danse Macabre woodcuts and Pamela Colman Smith's illustrations for the Rider-Waite-Smith Tarot. The study treats the deck as an artifact of anthropological modernism and reads its signs through postmodern semiotics.",
+  "Investigates acoustic intervals, phenomenological temporality and collective synchronization in live musical performance and in domestic silence. Durkheim's collective effervescence and Mauss's techniques of the body frame the analysis of rhythm and shared attention.",
+  "Compares artificial embodiment in L. Frank Baum's Tin Woodman with interior consciousness in Virginia Woolf's modernist domestic spaces. Both are read as figures of the in-between self, whose material form and inner life do not settle into one another.",
+  "Analyzes buildings, household objects and acoustic environments as a distributed memory system that retains social facts and traces of human presence after occupants depart. Bachelard's poetics of space and Durkheim's material social facts anchor the argument.",
+  "An eleven-chapter interdisciplinary monograph that joins childhood memory in Sarcoxie, Missouri with Durkheimian social facts, modernist literature and ritual theory. It uses personal memory as ethnographic material for thinking about thresholds, rhythm and place.",
+  "Examines how pre-modern ritual symbols and ecological motifs migrate into Western esoteric philosophy and modern literary criticism. Frazer, Weston, Eliade and Ovid's Metamorphoses supply the comparative frame.",
+  "Indexed work from the author's ResearchGate bibliography exploring themes of voyage, spatial separation, and liminal experience.",
+  "An interdisciplinary thesis in anthropology and English literature that extends the Baum and Woolf comparison of the in-between self, placing the author's own work in dialogue with both.",
+  "Conference paper presented at the Kansas City Conference 2026, on identity, consciousness, simulation and twisted panspermia in John Carpenter's The Thing.",
+  "Critical essay examining Ernest Hemingway's 1936 short story "The Snows of Kilimanjaro" as a foundational work of American modernism, focusing on memory, mortality, and symbolic thresholds."
+];
+
+var kindLabel = { Monograph: "Monograph", Paper: "Paper / Essay", Thesis: "Thesis / Talk" };
+var ul = document.getElementById("ledger");
+
+function esc(s) {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+}
+
+function render(f) {
+  ul.innerHTML = W.filter(function(w) { return f === "all" || w[2] === f; }).map(function(w) {
+    var i = W.indexOf(w);
+    var yrCite = w[0] === "n.d." ? "n.d." : w[0];
+    var cite = "Napierskie, P. (" + yrCite + "). " + esc(w[1]) + ". " + (w[5] ? w[4] + ". https://doi.org/" + w[5] : w[4] + ".") + " Synjyn Press.";
+    var doi = w[5] ? '<a href="https://doi.org/' + w[5] + '" target="_blank" rel="noopener">doi:' + w[5] + "</a>" : "";
+    return '<li><span class="yr">' + w[0] + '</span><div><h3>' + esc(w[1]) + "</h3><p>" + esc(w[3]) + '</p><details><summary>Abstract &amp; citation</summary><p class="abs">' + esc(ABS[i]) + '</p><p class="cite">' + cite + '</p></details><div class="meta" style="margin-top:12px"><span class="kind">' + kindLabel[w[2]] + "</span><span>" + w[4] + "</span>" + doi + "</div></div></li>";
+  }).join("");
+}
+
+document.querySelectorAll(".filters button").forEach(function(b) {
+  b.addEventListener("click", function() {
+    document.querySelectorAll(".filters button").forEach(function(x) {
+      x.setAttribute("aria-pressed", x === b ? "true" : "false");
+    });
+    render(b.getAttribute("data-f"));
+  });
+});
+
+// Theme toggle
+var root = document.documentElement;
+var themeBtn = document.getElementById("themeToggle");
+themeBtn.addEventListener("click", function() {
+  var current = root.getAttribute("data-theme");
+  var isDark = current === "dark" || (!current && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  root.setAttribute("data-theme", isDark ? "light" : "dark");
+});
+
+render("all");
+</script>
+</body>
+</html>
